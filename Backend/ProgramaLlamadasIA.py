@@ -101,3 +101,25 @@ def process_pdf(filepath_name, nombre_puesto):
     text = response.text
     pasarStringaJson(text)
     
+@app.route('/procesar_pdf', methods=['POST'])
+def procesar_pdf_route():
+    if 'pdf' not in request.files:
+        return jsonify({'error': 'No se encontró el archivo PDF'}), 400
+
+    pdf_file = request.files['pdf']
+    nombre_puesto = request.form.get('puesto')
+
+    if pdf_file.filename == '':
+        return jsonify({'error': 'Nombre de archivo PDF inválido'}), 400
+
+    if not nombre_puesto:
+        return jsonify({'error': 'No se especificó el puesto de trabajo'}), 400
+
+    if pdf_file:
+        filepath = 'temp.pdf'  # Guarda temporalmente el PDF
+        pdf_file.save(filepath)
+        resultado = process_pdf(filepath, nombre_puesto)
+        return jsonify(resultado)
+
+if __name__ == '__main__':
+  app.run(debug=True, port=5001)
