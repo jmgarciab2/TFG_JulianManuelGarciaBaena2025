@@ -8,6 +8,7 @@ from typing import List, Optional
 from pydantic import BaseModel, Field
 
 client = genai.Client(api_key="AIzaSyC2vz6Z8d7Q67M02SUS2tnkZzHa8S_P8vU")
+app = Flask(__name__)  # Inicializa la aplicación Flask
 
 class Resultado(BaseModel):
     nombre: str
