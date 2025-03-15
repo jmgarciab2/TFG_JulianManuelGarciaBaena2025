@@ -19,6 +19,24 @@ class Resultado(BaseModel):
     puntuacionPuesto: int
     razonesNoAptitud: Optional[str] = None
 
+# Doble verificacion de json
+def pasarStringaJson(text):
+    start_index = text.find("{")
+    if start_index != -1:
+        end_index = text.rfind("}") + 1
+        if end_index != 0:
+            json_string = text[start_index:end_index]
+            try:
+                json_object = json.loads(json_string)
+                print(json.dumps(json_object, indent=2, ensure_ascii=False))
+            except json.JSONDecodeError as e:
+                print(f"Error al parsear JSON: {e}")
+                print(json_string)
+        else:
+            print(text)
+    else:
+        print(text)
+
 def process_pdf(filepath_name, nombre_puesto):
     file = pathlib.Path(filepath_name)
     pdf_bytes = file.read_bytes()
@@ -81,4 +99,5 @@ def process_pdf(filepath_name, nombre_puesto):
     )
 
     text = response.text
+    pasarStringaJson(text)
     
