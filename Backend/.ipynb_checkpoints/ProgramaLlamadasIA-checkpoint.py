@@ -8,7 +8,7 @@ from typing import List, Optional
 from pydantic import BaseModel, Field
 
 client = genai.Client(api_key="AIzaSyC2vz6Z8d7Q67M02SUS2tnkZzHa8S_P8vU")
-app = Flask(__name__)  # Inicializa la aplicación Flask
+app = Flask(__name__)
 
 class Resultado(BaseModel):
     nombre: str
@@ -20,7 +20,6 @@ class Resultado(BaseModel):
     puntuacionPuesto: int
     razonesNoAptitud: Optional[str] = None
 
-# Doble verificacion de json
 def pasarStringaJson(text):
     start_index = text.find("{")
     if start_index != -1:
@@ -29,14 +28,17 @@ def pasarStringaJson(text):
             json_string = text[start_index:end_index]
             try:
                 json_object = json.loads(json_string)
-                print(json.dumps(json_object, indent=2, ensure_ascii=False))
+                return json_object
             except json.JSONDecodeError as e:
                 print(f"Error al parsear JSON: {e}")
                 print(json_string)
+                return None
         else:
             print(text)
+            return None
     else:
         print(text)
+        return None
 
 def process_pdf(filepath_name, nombre_puesto):
     file = pathlib.Path(filepath_name)
@@ -46,18 +48,18 @@ def process_pdf(filepath_name, nombre_puesto):
 
         Proceso de Análisis:
 
-        1.  Identificación de Requisitos:
+        1  Identificación de Requisitos:
             * Basándote en el nombre del puesto de {nombre_puesto}, identifica los requisitos clave que un candidato ideal debería cumplir.
             * Identificar segun el tipo de puesto al que se va a aplicar si es necesario identificar la experiencia academica.
             * En caso de que el puesto no requiera de estudios, observar las habilidades blandas, y la experiencia en el sector mas general del puesto de trabajo.
             * Considera tanto las habilidades técnicas como las habilidades blandas, la experiencia laboral, la formación académica y cualquier otro factor relevante.
             * Es necesario que el candidato posea una fuerte experiencia laboral para puestos de alta responsabilidad
-        2.  Evaluación del Currículum:
+        2  Evaluación del Currículum:
             * Analiza el currículum del candidato para identificar la información relevante que se relaciona con los requisitos identificados.
             * Prioriza la experiencia laboral sobre la académica, pero considera ambos aspectos en tu evaluación, solo en el caso de que el puesto requiera experiencia.
             * Prioriza la experiencia academica sobre la laboral para puestos que requieran un grado de responsabilidad baja, en gran medida.
             * Evalúa la relevancia de cada experiencia, habilidad y formación para el puesto de {nombre_puesto}.
-        3.  Resumen y Evaluación Final:
+        3  Resumen y Evaluación Final:
             * Si el candidato cumple con los requisitos necesarios, genera un resumen breve de sus principales fortalezas y logros, destacando su idoneidad para el puesto.
             * Si el candidato no cumple con los requisitos necesarios, explica las razones de manera clara y concisa.
             * Asigna una puntuación del 0 al 10 para la idoneidad del candidato.
@@ -68,14 +70,14 @@ def process_pdf(filepath_name, nombre_puesto):
 
         Genera un objeto JSON puro con los siguientes campos, sin texto adicional antes o después del JSON:
 
-        nombre (string): Nombre del candidato.
-        apellidos (string): Apellidos del candidato.
+        nombre (string): Nombre del candidato con la primera letra en mayuscula y las demas en minuscula.
+        apellidos (string): Apellidos del candidato con la primera letra de cada apellido en mayuscula y las demas en minuscula.
         experiencia_trabajo (list[string]): Lista de experiencias laborales relevantes.
         educacion (list[string]): Lista de experiencias académicas relevantes.
         apto (boolean): Indica si el candidato es apto para el puesto (True/False).
-        resumenCandidato (string): Un resumen breve de las fortalezas del candidato (solo si es apto).
+        resumenCandidato (string): Un resumen breve de las fortalezas del candidato (solo si es apto) incluye aspectos principales, no se puede tardar mas de 15 segundos en leer.
         puntuacionPuesto (integer): Puntuación del 0 al 10 para la idoneidad del candidato.
-        razonesNoAptitud (string): Razones por las que no se le ha seleccionado para el puesto (solo si no es apto) indicar tambien si no existen soft skills que complementen al puesto de trabajo.
+        razonesNoAptitud (string): Razones por las que no se le ha seleccionado para el puesto (solo si no es apto) indicar tambien si no existen soft skills que complementen al puesto de trabajo, deberia de incluir lo esencial de porque no lo han cogido, es decir, resumenes breves.
 
         Requisitos Adicionales:
 
@@ -100,7 +102,9 @@ def process_pdf(filepath_name, nombre_puesto):
     )
 
     text = response.text
-    pasarStringaJson(text)
+    print(text)
+    json_result = pasarStringaJson(text)
+    return json_result
     
 @app.route('/procesar_pdf', methods=['POST'])
 def procesar_pdf_route():
@@ -117,10 +121,14 @@ def procesar_pdf_route():
         return jsonify({'error': 'No se especificó el puesto de trabajo'}), 400
 
     if pdf_file:
-        filepath = 'temp.pdf'  # Guarda temporalmente el PDF
+        filepath = 'temp.pdf'
         pdf_file.save(filepath)
         resultado = process_pdf(filepath, nombre_puesto)
-        return jsonify(resultado)
+        os.remove(filepath) #Elimina el archivo temporal
+        if resultado:
+          return jsonify(resultado)
+        else:
+          return jsonify({'error': 'Error al procesar el PDF'}), 500
 
 if __name__ == '__main__':
-  app.run(debug=True, port=5001)
+    app.run(debug=True, port=5001)
