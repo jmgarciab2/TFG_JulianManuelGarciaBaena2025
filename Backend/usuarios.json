@@ -1,0 +1,14 @@
+{
+    "gordito16": {
+        "password_hash": "$2b$12$vSKQCf1FmM5oHGxozPrhIOMThLoSfRT4.e47ro6qiWAnyw.5axZge",
+        "company": "Cochinos FC"
+    },
+    "prueba": {
+        "password_hash": "$2b$12$wAeHF/mD5vg2Hfi2p9lluO22SHn2jl0Sf7DmGHoURtksNiVzsq3VG",
+        "company": "Empresa prueba"
+    },
+    "prueba1": {
+        "password_hash": "$2b$12$oE5UATuC5QWwv1wzuNS73uSS4i78yvWYFo3OalmWXbiQpMTxNII6K",
+        "company": "Empresa Prueba"
+    }
+}

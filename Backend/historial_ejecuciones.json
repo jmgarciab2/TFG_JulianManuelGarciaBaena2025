@@ -1,0 +1,904 @@
+[
+    {
+        "timestamp": "2025-04-20T16:54:46.228264",
+        "puesto": "Desarrollador de software java",
+        "resultados": [
+            {
+                "error": "Error HTTP N/A",
+                "nombre_cv": "GuillermoRamirez_CV.pdf",
+                "error_message": "Sin respuesta o error de conexión"
+            },
+            {
+                "apellidos": "Muñoz Rojas",
+                "apto": true,
+                "educacion": [
+                    "Grado en Ingeniería Informática y título propio en Hacking Ético y Ciberseguridad en la Universidad Francisco de Vitoria (Madrid)",
+                    "Ciclo Formativo Superior en Desarrollo de Aplicaciones Multiplataforma en la Universidad Europea de Madrid"
+                ],
+                "experiencia_trabajo": [
+                    "Analista de seguridad en Zerolynx (Septiembre 2023-Actualidad): Auditorías web, externas, internas y dispositivos móviles; Forense; Apoyo técnico en proyectos de Red Team",
+                    "Administrador de Base de Datos, Gestor Web y Desarrollador de Software en Resgreen S.L. (Noviembre 2022-Septiembre 2023): Gestión de información en BBDD Access; Desarrollo de software en BBDD Visual Basic; Creación y gestión de página web"
+                ],
+                "nombre": "Javier",
+                "porcentaje_educacion": 35.0,
+                "porcentaje_experiencia": 35.0,
+                "porcentaje_habilidades": 20.0,
+                "porcentaje_idiomas": 10.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 8,
+                "resumenCandidato": "Javier posee una sólida formación académica en ingeniería informática y ciberseguridad, complementada con experiencia laboral relevante en desarrollo de software, administración de bases de datos y gestión web. Su perfil demuestra capacidad de adaptación y proactividad,  además de un buen dominio del inglés, lo que lo convierte en un candidato idóneo.",
+                "nombre_archivo_cv": "JavierMuñozRojasCV.pdf"
+            },
+            {
+                "apellidos": "Manuel García Baena",
+                "apto": true,
+                "educacion": [
+                    "Ingeniería Informática y Título Propio en Robótica, Universidad Francisco de Vitoria (2020-2025)",
+                    "Desarrollo de Aplicaciones Multiplataforma, CES Juan Pablo Segundo (2018-2020)"
+                ],
+                "experiencia_trabajo": [
+                    "Desarrollador Backend, Duagon Iberia (Junio 2024 - Octubre 2024)",
+                    "Desarrollador Backend, KPMG (Becario) (Octubre 2023 - Mayo 2024)"
+                ],
+                "nombre": "Julian",
+                "porcentaje_educacion": 35.0,
+                "porcentaje_experiencia": 35.0,
+                "porcentaje_habilidades": 20.0,
+                "porcentaje_idiomas": 10.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 7,
+                "resumenCandidato": "El candidato presenta un perfil adecuado para un puesto de desarrollador Java de nivel intermedio. Posee experiencia en desarrollo backend con Java y Spring, además de conocimientos en metodologías ágiles y uso de herramientas como Git, Jira y Confluence. Su formación académica en ingeniería informática refuerza sus habilidades técnicas. Aunque la experiencia es limitada, su motivación y participación en proyectos relevantes lo hacen un candidato potencial.",
+                "nombre_archivo_cv": "JulianManuelGarciaBaena_CV_actualizado_v2 (1).pdf"
+            },
+            {
+                "apellidos": "Rodríguez Rodríguez",
+                "apto": false,
+                "educacion": [
+                    "Máster en Orientación e Intervención Psicopedagógica",
+                    "Maestra Especialista en Audición y Lenguaje",
+                    "Grado en Magisterio de Primaria con mención especializada en Audición y Lenguaje",
+                    "Bachillerato de Ciencias Sociales"
+                ],
+                "experiencia_trabajo": [
+                    "Apoyo específico de alumnos con necesidades educativas especiales como maestra especialista en audición y lenguaje",
+                    "Clases de refuerzo educativo de lengua castellana y literatura para alumnos de 1º y 2º de la ESO",
+                    "Atención a las necesidades específicas del alumnado",
+                    "Impartición de clases con modalidad online y/o presencial.",
+                    "Ayudar a alumnos de todos los cursos de primaria en una o varias asignaturas.",
+                    "Uso de diferentes métodos de enseñanza adaptados al tipo de alumnado.",
+                    "Observación y participación en el centro.",
+                    "Organización de documentos oficiales y programas.",
+                    "Aprender recursos manipulativos dentro del aula.",
+                    "Alcance de objetivos y de áreas competenciales.",
+                    "Especializarme en la mención de Audición y Lenguaje.",
+                    "Observación y participación en el centro.",
+                    "Organización de documentos oficiales y programas.",
+                    "Aprender recursos manipulativos dentro del aula.",
+                    "Alcance de objetivos y de áreas competenciales.",
+                    "Observación y participación en las aulas.",
+                    "Propuestas de trabajo para los alumnos.",
+                    "Desarrollo de competencias curriculares.",
+                    "Realizar técnicas de salvamento acuático, en caso necesario.",
+                    "Reconocer y manejar adecuadamente el equipamiento básico.",
+                    "Identificar y actuar correctamente ante lesiones en el medio acuático.",
+                    "Supervisar la limpieza de las instalaciones, control de niveles de pH y cloro.",
+                    "Velar por el cumplimiento de la normativa de la piscina.",
+                    "Garantizar la seguridad de todos los usuarios.",
+                    "Realizar técnicas de salvamento acuático, en caso necesario.",
+                    "Reconocer y manejar adecuadamente el equipamiento básico.",
+                    "Identificar y actuar correctamente ante lesiones en el medio acuático.",
+                    "Supervisar la limpieza de las instalaciones, control de niveles de pH y cloro.",
+                    "Velar por el cumplimiento de la normativa de la piscina.",
+                    "Garantizar la seguridad de todos los usuarios"
+                ],
+                "nombre": "Noelia",
+                "porcentaje_educacion": 40.0,
+                "porcentaje_experiencia": 15.0,
+                "porcentaje_habilidades": 10.0,
+                "porcentaje_idiomas": 10.0,
+                "porcentaje_otros": 25.0,
+                "puntuacionPuesto": 2,
+                "razonesNoAptitud": "La experiencia laboral y la formación académica de Noelia no se alinean con los requisitos de un puesto de Desarrollador de Software Java.  Su experiencia es principalmente en educación y primeros auxilios, sin mostrar habilidades o conocimientos en programación, desarrollo de software o tecnologías relacionadas con Java.",
+                "nombre_archivo_cv": "NoeliaRodriguezCV.pdf"
+            },
+            {
+                "apellidos": "Jose Paniagua Falo",
+                "apto": true,
+                "educacion": [
+                    "Ingeniería Informática en Universidad Francisco de Vitoria"
+                ],
+                "experiencia_trabajo": [
+                    "Data Scientist Intern en Engie GEMS-Spain",
+                    "Director of Strategy and Data Governance for Project NLC"
+                ],
+                "nombre": "Pedro",
+                "porcentaje_educacion": 30.0,
+                "porcentaje_experiencia": 35.0,
+                "porcentaje_habilidades": 25.0,
+                "porcentaje_idiomas": 10.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 7,
+                "resumenCandidato": "Pedro posee una sólida formación en ingeniería informática con especialización en robótica, además de experiencia en ciencia de datos e inteligencia artificial. Su experiencia en proyectos de análisis de datos, aprendizaje automático e implementación de modelos predictivos, junto con su dominio de Python y otras herramientas de análisis de datos, lo hacen un candidato adecuado para este puesto. Sus habilidades de comunicación y resolución de problemas también son notables.",
+                "nombre_archivo_cv": "PedroJosePaniaguaFaloCV.pdf"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-04-20T16:56:42.046983",
+        "puesto": "Desarrollador de software java",
+        "resultados": [
+            {
+                "apellidos": "Ramirez Cardenas",
+                "apto": true,
+                "educacion": [
+                    "LLM Engineering: Master AI, Language Models and Agents",
+                    "Cambridge Certifications",
+                    "TOEFL, SAT (C1 English Level)",
+                    "BI courses provided by Telefónica",
+                    "Google IT Automation with Python"
+                ],
+                "experiencia_trabajo": [
+                    "Data Scientist (06/08/2024-Present) Telefónica Educación Digital",
+                    "Artificial Intelligence Research Intern (01/09/2023-31/07/2024) CEIEC Research Institute",
+                    "Junior Software Engineer (01/06/2023-30/07/2023) AyD Software SL",
+                    "Software Engineer Intern (01/06/2022-30/07/2022) AyD Software SL",
+                    "Software Engineer Intern (01/06/2021-30/07/2021) AyD Software SL"
+                ],
+                "nombre": "Guillermo",
+                "porcentaje_educacion": 30.0,
+                "porcentaje_experiencia": 35.0,
+                "porcentaje_habilidades": 25.0,
+                "porcentaje_idiomas": 10.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 8,
+                "resumenCandidato": "Guillermo posee una sólida formación académica y una experiencia laboral relevante en el campo de la inteligencia artificial y el desarrollo de software.  Su experiencia en Telefónica y el CEIEC Research Institute, combinada con su participación en proyectos de desarrollo de software en AyD Software SL, demuestra sus habilidades técnicas y su capacidad para trabajar en equipo. El dominio de varios lenguajes de programación y frameworks, junto con su experiencia en el desarrollo de modelos generativos de IA, lo convierten en un candidato altamente cualificado.",
+                "nombre_archivo_cv": "GuillermoRamirez_CV.pdf"
+            },
+            {
+                "apellidos": "Muñoz Rojas",
+                "apto": true,
+                "educacion": [
+                    "Grado en Ingeniería Informática y título propio en Hacking Ético y Ciberseguridad (Universidad Francisco de Vitoria)",
+                    "Ciclo Formativo Superior en Desarrollo de Aplicaciones Multiplataforma (Universidad Europea de Madrid)"
+                ],
+                "experiencia_trabajo": [
+                    "Analista de seguridad en Zerolynx",
+                    "Administrador de Base de Datos, Gestor Web y Desarrollador de Software en Resgreen S.L"
+                ],
+                "nombre": "Javier",
+                "porcentaje_educacion": 35.0,
+                "porcentaje_experiencia": 35.0,
+                "porcentaje_habilidades": 20.0,
+                "porcentaje_idiomas": 10.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 7,
+                "resumenCandidato": "Javier posee una sólida formación académica en ingeniería informática y ciberseguridad, complementada con experiencia laboral relevante en desarrollo de software, administración de bases de datos y gestión web. Su perfil destaca por la capacidad de adaptación, proactividad y trabajo en equipo.",
+                "nombre_archivo_cv": "JavierMuñozRojasCV.pdf"
+            },
+            {
+                "apellidos": "Manuel García Baena",
+                "apto": true,
+                "educacion": [
+                    "Ingeniería Informática y Título Propio en Robótica, Universidad Francisco de Vitoria (2020-2025)",
+                    "Desarrollo de Aplicaciones Multiplataforma, CES Juan Pablo Segundo (2018-2020)"
+                ],
+                "experiencia_trabajo": [
+                    "Desarrollador Backend, Duagon Iberia | Junio 2024 – Octubre 2024",
+                    "Desarrollador Backend, KPMG (Becario) | Octubre 2023 – Mayo 2024"
+                ],
+                "nombre": "Julian",
+                "porcentaje_educacion": 45.0,
+                "porcentaje_experiencia": 20.0,
+                "porcentaje_habilidades": 25.0,
+                "porcentaje_idiomas": 10.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 7,
+                "resumenCandidato": "El candidato presenta un perfil adecuado para un puesto de Desarrollador Java de nivel junior o becario. Su formación en Ingeniería Informática y su experiencia en desarrollo backend, aunque breve, demuestran sus habilidades en Java, Spring y desarrollo de aplicaciones web.  Su participación en proyectos de migración de sistemas y la documentación de módulos indican un buen entendimiento de la importancia de la calidad de código y las buenas prácticas.",
+                "nombre_archivo_cv": "JulianManuelGarciaBaena_CV_actualizado_v2 (1).pdf"
+            },
+            {
+                "apellidos": "Rodríguez Rodríguez",
+                "apto": false,
+                "educacion": [
+                    "Máster en Orientación e Intervención Psicopedagógica",
+                    "Maestra Especialista en Audición y Lenguaje",
+                    "Grado en Magisterio de Primaria con mención especializada en Audición y Lenguaje",
+                    "Bachillerato de Ciencias Sociales"
+                ],
+                "experiencia_trabajo": [
+                    "Apoyo específico de alumnos con necesidades educativas especiales como maestra especialista en audición y lenguaje",
+                    "Clases de refuerzo educativo de lengua castellana y literatura para alumnos de 1º y 2º de la ESO",
+                    "Atención a las necesidades específicas del alumnado",
+                    "Impartición de clases con modalidad online y/o presencial. Ayudar a alumnos de todos los cursos de primaria en una o varias asignaturas. Uso de diferentes métodos de enseñanza adaptados al tipo de alumnado",
+                    "Observación y participación en el centro. Organización de documentos oficiales y programas. Aprender recursos manipulativos dentro del aula. Alcance de objetivos y de áreas competenciales. Especializarme en la mención de Audición y Lenguaje",
+                    "Observación y participación en el centro. Organización de documentos oficiales y programas. Aprender recursos manipulativos dentro del aula. Alcance de objetivos y de áreas competenciales",
+                    "Observación y participación en las aulas. Propuestas de trabajo para los alumnos. Desarrollo de competencias curriculares",
+                    "Realizar técnicas de salvamento acuático, en caso necesario. Reconocer y manejar adecuadamente el equipamiento básico. Identificar y actuar correctamente ante lesiones en el medio acuático. Supervisar la limpieza de las instalaciones, control de niveles de pH y cloro. Velar por el cumplimiento de la normativa de la piscina. Garantizar la seguridad de todos los usuarios.",
+                    "Realizar técnicas de salvamento acuático, en caso necesario. Reconocer y manejar adecuadamente el equipamiento básico. Identificar y actuar correctamente ante lesiones en el medio acuático. Supervisar la limpieza de las instalaciones, control de niveles de pH y cloro. Velar por el cumplimiento de la normativa de la piscina. Garantizar la seguridad de todos los usuarios"
+                ],
+                "nombre": "Noelia",
+                "porcentaje_educacion": 0.0,
+                "porcentaje_experiencia": 0.0,
+                "porcentaje_habilidades": 0.0,
+                "porcentaje_idiomas": 0.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 0,
+                "razonesNoAptitud": "La experiencia y formación de Noelia Rodríguez Rodríguez no se ajustan al perfil requerido para un puesto de Desarrollador de software Java. Su experiencia se centra en la educación y la atención a alumnos, careciendo de habilidades y conocimientos en programación o desarrollo de software.",
+                "nombre_archivo_cv": "NoeliaRodriguezCV.pdf"
+            },
+            {
+                "apellidos": "Jose Paniagua Falo",
+                "apto": false,
+                "educacion": [
+                    "Ingeniería Informática (Universidad Francisco de Vitoria)"
+                ],
+                "experiencia_trabajo": [
+                    "Data Scientist Intern (Engie GEMS-Spain)",
+                    "Director of Strategy and Data Governance for Project NLC"
+                ],
+                "nombre": "Pedro",
+                "porcentaje_educacion": 40.0,
+                "porcentaje_experiencia": 15.0,
+                "porcentaje_habilidades": 20.0,
+                "porcentaje_idiomas": 10.0,
+                "porcentaje_otros": 15.0,
+                "puntuacionPuesto": 3,
+                "razonesNoAptitud": "La experiencia del candidato se centra en ciencia de datos y análisis, con poca o ninguna mención a desarrollo de software Java. Si bien tiene una formación en ingeniería informática, la falta de experiencia en Java lo hace inadecuado para el puesto.",
+                "nombre_archivo_cv": "PedroJosePaniaguaFaloCV.pdf"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-04-20T16:59:39.666243",
+        "puesto": "Desarrollador de software java",
+        "resultados": [
+            {
+                "apellidos": "Ramirez Cardenas",
+                "apto": true,
+                "educacion": [
+                    "Computer Engineer with own degree in Robotics and Internet of Things",
+                    "Cambridge Certifications",
+                    "TOEFL, SAT (C1 English Level)",
+                    "LLM Engineering: Master AI, Language Models and Agents",
+                    "Google IT Automation with Python",
+                    "BI courses provided by Telefónica"
+                ],
+                "experiencia_trabajo": [
+                    "Data Scientist (Telefónica Educación Digital)",
+                    "Artificial Intelligence Research Intern (CEIEC Research Institute)",
+                    "Junior Software Engineer (AyD Software SL)",
+                    "Software Engineer Intern (AyD Software SL)"
+                ],
+                "nombre": "Guillermo",
+                "porcentaje_educacion": 30.0,
+                "porcentaje_experiencia": 35.0,
+                "porcentaje_habilidades": 25.0,
+                "porcentaje_idiomas": 5.0,
+                "porcentaje_otros": 5.0,
+                "puntuacionPuesto": 8,
+                "resumenCandidato": "Guillermo posee una sólida formación en ingeniería informática y experiencia relevante en desarrollo de software, inteligencia artificial y ciencia de datos. Su experiencia en Telefónica y en el CEIEC, junto con sus proyectos personales, demuestran su capacidad para trabajar en equipos, liderazgo y resolución de problemas complejos.  El dominio del inglés y sus certificaciones complementan su perfil. Su experiencia en proyectos con APIs REST y Django son relevantes para el puesto.",
+                "nombre_archivo_cv": "GuillermoRamirez_CV.pdf"
+            },
+            {
+                "apellidos": "Muñoz Rojas",
+                "apto": true,
+                "educacion": [
+                    "Grado en Ingeniería Informática y Título propio en Hacking Ético y Ciberseguridad en la Universidad Francisco de Vitoria",
+                    "Ciclo Formativo Superior en Desarrollo de Aplicaciones Multiplataforma en la Universidad Europea de Madrid"
+                ],
+                "experiencia_trabajo": [
+                    "Analista de seguridad en Zerolynx",
+                    "Administrador de Base de Datos, Gestor Web y Desarrollador de Software en Resgreen S.L"
+                ],
+                "nombre": "Javier",
+                "porcentaje_educacion": 35.0,
+                "porcentaje_experiencia": 35.0,
+                "porcentaje_habilidades": 20.0,
+                "porcentaje_idiomas": 10.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 7,
+                "resumenCandidato": "Javier posee una sólida formación académica en ingeniería informática y ciberseguridad, complementada con experiencia laboral relevante en desarrollo de software, administración de bases de datos y gestión web. Su dominio del inglés B2 y certificaciones adicionales en ciberseguridad son puntos fuertes.  Aunque la experiencia Java no es explícita, su perfil indica capacidades transferibles que lo hacen un candidato prometedor.",
+                "nombre_archivo_cv": "JavierMuñozRojasCV.pdf"
+            },
+            {
+                "apellidos": "Manuel García Baena",
+                "apto": true,
+                "educacion": [
+                    "Ingeniería Informática y Título Propio en Robótica, Universidad Francisco de Vitoria",
+                    "Desarrollo de Aplicaciones Multiplataforma, CES Juan Pablo Segundo"
+                ],
+                "experiencia_trabajo": [
+                    "Desarrollador Backend, Duagon Iberia",
+                    "Desarrollador Backend, KPMG (Becario)"
+                ],
+                "nombre": "Julian",
+                "porcentaje_educacion": 40.0,
+                "porcentaje_experiencia": 35.0,
+                "porcentaje_habilidades": 20.0,
+                "porcentaje_idiomas": 5.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 8,
+                "resumenCandidato": "El candidato presenta una sólida formación académica en ingeniería informática y experiencia en desarrollo backend con Java y Spring, además de habilidades en metodologías ágiles y buen manejo de herramientas como Git, Jira y Confluence. Su experiencia en proyectos con Java, Springboot, y Microservicios lo hacen un buen candidato para el puesto. El dominio de inglés (B2 no certificado) es un punto a su favor.",
+                "nombre_archivo_cv": "JulianManuelGarciaBaena_CV_actualizado_v2 (1).pdf"
+            },
+            {
+                "apellidos": "Rodríguez Rodríguez",
+                "apto": false,
+                "educacion": [
+                    "Máster en Orientación e Intervención Psicopedagógica",
+                    "Maestra Especialista en Audición y Lenguaje",
+                    "Grado en Magisterio de Primaria con mención especializada en Audición y Lenguaje",
+                    "Bachillerato de Ciencias Sociales"
+                ],
+                "experiencia_trabajo": [
+                    "Apoyo específico de alumnos con necesidades educativas especiales como maestra especialista en audición y lenguaje",
+                    "Clases de refuerzo educativo de lengua castellana y literatura para alumnos de 1º y 2º de la ESO",
+                    "Atención a las necesidades específicas del alumnado",
+                    "Impartición de clases con modalidad online y/o presencial.",
+                    "Ayudar a alumnos de todos los cursos de primaria en una o varias asignaturas.",
+                    "Uso de diferentes métodos de enseñanza adaptados al tipo de alumnado.",
+                    "Observación y participación en el centro.",
+                    "Organización de documentos oficiales y programas.",
+                    "Aprender recursos manipulativos dentro del aula.",
+                    "Alcance de objetivos y de áreas competenciales.",
+                    "Especializarme en la mención de Audición y Lenguaje",
+                    "Observación y participación en el centro.",
+                    "Organización de documentos oficiales y programas.",
+                    "Aprender recursos manipulativos dentro del aula.",
+                    "Alcance de objetivos y de áreas competenciales.",
+                    "Observación y participación en las aulas.",
+                    "Propuestas de trabajo para los alumnos.",
+                    "Desarrollo de competencias curriculares.",
+                    "Realizar técnicas de salvamento acuático, en caso necesario.",
+                    "Reconocer y manejar adecuadamente el equipamiento básico.",
+                    "Identificar y actuar correctamente ante lesiones en el medio acuático.",
+                    "Supervisar la limpieza de las instalaciones, control de niveles de pH y cloro.",
+                    "Velar por el cumplimiento de la normativa de la piscina.",
+                    "Garantizar la seguridad de todos los usuarios.",
+                    "Realizar técnicas de salvamento acuático, en caso necesario.",
+                    "Reconocer y manejar adecuadamente el equipamiento básico.",
+                    "Identificar y actuar correctamente ante lesiones en el medio acuático.",
+                    "Supervisar la limpieza de las instalaciones, control de niveles de pH y cloro.",
+                    "Velar por el cumplimiento de la normativa de la piscina.",
+                    "Garantizar la seguridad de todos los usuarios"
+                ],
+                "nombre": "Noelia",
+                "porcentaje_educacion": 0.0,
+                "porcentaje_experiencia": 0.0,
+                "porcentaje_habilidades": 0.0,
+                "porcentaje_idiomas": 0.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 0,
+                "razonesNoAptitud": "La experiencia laboral y la formación académica del candidato no se ajustan al perfil requerido para un puesto de Desarrollador de software Java.  No se evidencia experiencia en desarrollo de software ni en áreas relacionadas con la informática.",
+                "nombre_archivo_cv": "NoeliaRodriguezCV.pdf"
+            },
+            {
+                "apellidos": "Jose Paniagua Falo",
+                "apto": false,
+                "educacion": [
+                    "Ingeniería Informática en Universidad Francisco de Vitoria"
+                ],
+                "experiencia_trabajo": [
+                    "Data Scientist Intern en Engie GEMS-Spain",
+                    "Director of Strategy and Data Governance for Project NLC"
+                ],
+                "nombre": "Pedro",
+                "porcentaje_educacion": 40.0,
+                "porcentaje_experiencia": 15.0,
+                "porcentaje_habilidades": 20.0,
+                "porcentaje_idiomas": 10.0,
+                "porcentaje_otros": 15.0,
+                "puntuacionPuesto": 3,
+                "razonesNoAptitud": "Aunque el candidato demuestra habilidades en análisis de datos, aprendizaje automático y manejo de herramientas como Python, su experiencia no es directamente relevante para un puesto de Desarrollador de Software Java.  La formación en Ingeniería Informática es un buen punto de partida, pero la falta de experiencia en Java y desarrollo de software son factores determinantes en la no selección.",
+                "nombre_archivo_cv": "PedroJosePaniaguaFaloCV.pdf"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-04-20T17:01:09.241774",
+        "puesto": "Desarrollador de software python",
+        "resultados": [
+            {
+                "apellidos": "Ramirez Cardenas",
+                "apto": true,
+                "educacion": [
+                    "Computer Engineer with own degree in Robotics and Internet of Things",
+                    "Cambridge Certifications",
+                    "TOEFL, SAT (C1 English Level)",
+                    "LLM Engineering: Master AI, Language Models and Agents",
+                    "Google IT Automation with Python",
+                    "BI courses provided by Telefónica"
+                ],
+                "experiencia_trabajo": [
+                    "Data Scientist (Telefónica Educación Digital)",
+                    "Artificial Intelligence Research Intern (CEIEC Research Institute)",
+                    "Junior Software Engineer (AyD Software SL)",
+                    "Software Engineer Intern (AyD Software SL)"
+                ],
+                "nombre": "Guillermo",
+                "porcentaje_educacion": 30.0,
+                "porcentaje_experiencia": 35.0,
+                "porcentaje_habilidades": 25.0,
+                "porcentaje_idiomas": 5.0,
+                "porcentaje_otros": 5.0,
+                "puntuacionPuesto": 8,
+                "resumenCandidato": "Guillermo posee una sólida formación académica y experiencia laboral relevante en el campo de la inteligencia artificial y el desarrollo de software. Su experiencia en Telefónica, junto con sus proyectos personales y prácticas, demuestran su capacidad para aplicar modelos de IA generativos y trabajar con diferentes frameworks y lenguajes de programación. El dominio del inglés y sus certificaciones adicionales refuerzan su perfil.",
+                "nombre_archivo_cv": "GuillermoRamirez_CV.pdf"
+            },
+            {
+                "apellidos": "Muñoz Rojas",
+                "apto": true,
+                "educacion": [
+                    "Grado en Ingeniería Informática y Título propio en Ciberseguridad y Hacking Ético (Universidad Francisco de Vitoria, Septiembre 2020 – Junio 2024)",
+                    "Ciclo Formativo Superior en Desarrollo de Aplicaciones Multiplataforma (Universidad Europea de Madrid, Septiembre 2018 – Junio 2020)"
+                ],
+                "experiencia_trabajo": [
+                    "Analista de seguridad en Zerolynx (Septiembre 2023-Actualmente): Ejecución de proyectos de auditorías web, externas, internas y de dispositivos móviles. Ejecución de proyectos de forense. Apoyo técnico en el desarrollo de proyectos de Red Team.",
+                    "Administrador de Base de Datos, Gestor Web y Desarrollador de Software en Resgreen S.L. (Noviembre 2022 – Septiembre 2023): Gestión de la información en la BBDD Access de los empleados. Desarrollo de software para la BBDD en Visual Basic. Creación y gestión continua de la página web"
+                ],
+                "nombre": "Javier",
+                "porcentaje_educacion": 30.0,
+                "porcentaje_experiencia": 35.0,
+                "porcentaje_habilidades": 25.0,
+                "porcentaje_idiomas": 5.0,
+                "porcentaje_otros": 5.0,
+                "puntuacionPuesto": 8,
+                "resumenCandidato": "Javier posee una sólida formación académica en ingeniería informática y ciberseguridad, complementada con experiencia práctica en desarrollo de software, administración de bases de datos y gestión web.  Su experiencia en Zerolynx y Resgreen S.L. demuestra su capacidad para trabajar en proyectos de diversa índole, incluyendo auditorías y desarrollo de software en entornos web. El dominio del inglés B2  y las certificaciones adicionales en ciberseguridad refuerzan su perfil.",
+                "nombre_archivo_cv": "JavierMuñozRojasCV.pdf"
+            },
+            {
+                "apellidos": "Manuel García Baena",
+                "apto": true,
+                "educacion": [
+                    "Ingeniería Informática y Título Propio en Robótica, Universidad Francisco de Vitoria",
+                    "Desarrollo de Aplicaciones Multiplataforma, CES Juan Pablo Segundo"
+                ],
+                "experiencia_trabajo": [
+                    "Desarrollador Backend, Duagon Iberia",
+                    "Desarrollador Backend, KPMG (Becario)"
+                ],
+                "nombre": "Julian",
+                "porcentaje_educacion": 40.0,
+                "porcentaje_experiencia": 35.0,
+                "porcentaje_habilidades": 20.0,
+                "porcentaje_idiomas": 5.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 7,
+                "resumenCandidato": "Julian posee una sólida formación académica en ingeniería informática y experiencia práctica en desarrollo backend con Java y Spring. Su experiencia en proyectos con diferentes tecnologías y metodologías ágiles, junto con su conocimiento de Linux y bases de datos, lo convierten en un candidato adecuado, aunque se requiere formación adicional en Python.",
+                "nombre_archivo_cv": "JulianManuelGarciaBaena_CV_actualizado_v2 (1).pdf"
+            },
+            {
+                "apellidos": "Rodríguez Rodríguez",
+                "apto": false,
+                "educacion": [
+                    "Máster en Orientación e Intervención Psicopedagógica",
+                    "Maestra Especialista en Audición y Lenguaje",
+                    "Grado en Magisterio de Primaria con mención especializada en Audición y Lenguaje"
+                ],
+                "experiencia_trabajo": [
+                    "Apoyo específico de alumnos con necesidades educativas especiales como maestra especialista en audición y lenguaje",
+                    "Clases de refuerzo educativo de lengua castellana y literatura para alumnos de 1º y 2º de la ESO",
+                    "Atención a las necesidades específicas del alumnado",
+                    "Impartición de clases con modalidad online y/o presencial",
+                    "Socorrista en piscinas en cooperativas"
+                ],
+                "nombre": "Noelia",
+                "porcentaje_educacion": 0.0,
+                "porcentaje_experiencia": 0.0,
+                "porcentaje_habilidades": 0.0,
+                "porcentaje_idiomas": 0.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 0,
+                "razonesNoAptitud": "La candidata no tiene experiencia en desarrollo de software Python ni en áreas relacionadas con la informática. Su formación y experiencia se centran en la educación y la atención a alumnos con necesidades especiales.",
+                "nombre_archivo_cv": "NoeliaRodriguezCV.pdf"
+            },
+            {
+                "apellidos": "Jose Paniagua Falo",
+                "apto": true,
+                "educacion": [
+                    "Ingeniería Informática en Universidad Francisco de Vitoria"
+                ],
+                "experiencia_trabajo": [
+                    "Data Scientist Intern en Engie GEMS-Spain",
+                    "Director of Strategy and Data Governance for Project NLC"
+                ],
+                "nombre": "Pedro",
+                "porcentaje_educacion": 30.0,
+                "porcentaje_experiencia": 35.0,
+                "porcentaje_habilidades": 25.0,
+                "porcentaje_idiomas": 10.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 8,
+                "resumenCandidato": "Pedro posee una sólida formación académica en ingeniería informática con especialización en robótica, y una experiencia demostrable en ciencia de datos e inteligencia artificial. Su dominio de Python, junto con sus habilidades en diversas librerías como Pandas, NumPy, Keras, Scikit-learn y TensorFlow, lo convierten en un candidato adecuado para el puesto.  Añade a esto su experiencia como director de estrategia y gobernanza de datos, donde lideró proyectos de análisis e implementación de soluciones de ML/IA. Aunque la experiencia en desarrollo de software no es explícita, sus habilidades y proyectos demuestran la capacidad para aprender y adaptarse rápidamente a nuevas tecnologías.",
+                "nombre_archivo_cv": "PedroJosePaniaguaFaloCV.pdf"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-04-20T17:11:52.661579",
+        "puesto": "Desarrollador de software java",
+        "resultados": [
+            {
+                "apellidos": "Ramirez Cardenas",
+                "apto": true,
+                "educacion": [
+                    "Cambridge Certifications",
+                    "TOEFL, SAT (C1 English Level)",
+                    "LLM Engineering: Master Al, Language Models and Agents",
+                    "Google IT Automation with Python",
+                    "BI courses provided by Telefónica"
+                ],
+                "experiencia_trabajo": [
+                    "Data Scientist (06/08/2024-Present) Telefónica Educación Digital",
+                    "Artificial Intelligence Research Intern (01/09/2023-31/07/2024) CEIEC Research Institute",
+                    "Junior Software Engineer (01/06/2023-30/07/2023) AyD Software SL",
+                    "Software Engineer Intern (01/06/2022-30/07/2022) AyD Software SL",
+                    "Software Engineer Intern (01/06/2021-30/07/2021) AyD Software SL"
+                ],
+                "nombre": "Guillermo",
+                "porcentaje_educacion": 30.0,
+                "porcentaje_experiencia": 35.0,
+                "porcentaje_habilidades": 25.0,
+                "porcentaje_idiomas": 10.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 8,
+                "resumenCandidato": "Guillermo posee una sólida formación académica y una experiencia laboral significativa en el campo de la inteligencia artificial y el desarrollo de software. Su experiencia en Telefónica y el CEIEC, junto con sus proyectos personales y su dominio de lenguajes de programación como Python y Java, lo hacen un candidato adecuado para un puesto de desarrollador de software Java.",
+                "nombre_archivo_cv": "GuillermoRamirez_CV.pdf"
+            },
+            {
+                "apellidos": "Muñoz Rojas",
+                "apto": true,
+                "educacion": [
+                    "Grado en Ingeniería Informática y título propio en Hacking Ético y Ciberseguridad (Universidad Francisco de Vitoria)",
+                    "Ciclo Formativo Superior en Desarrollo de Aplicaciones Multiplataforma (Universidad Europea de Madrid)"
+                ],
+                "experiencia_trabajo": [
+                    "Analista de seguridad en Zerolynx",
+                    "Administrador de Base de Datos, Gestor Web y Desarrollador de Software en Resgreen S.L"
+                ],
+                "nombre": "Javier",
+                "porcentaje_educacion": 35.0,
+                "porcentaje_experiencia": 35.0,
+                "porcentaje_habilidades": 20.0,
+                "porcentaje_idiomas": 10.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 7,
+                "resumenCandidato": "Javier posee una sólida formación académica en ingeniería informática y ciberseguridad, complementada con experiencia en roles de desarrollo de software, administración de bases de datos y gestión web. Su experiencia en Zerolynx realizando auditorías y tareas forenses es un plus para el puesto. El dominio del inglés a nivel B2 también resulta beneficioso.",
+                "nombre_archivo_cv": "JavierMuñozRojasCV.pdf"
+            },
+            {
+                "apellidos": "Manuel García Baena",
+                "apto": true,
+                "educacion": [
+                    "Ingeniería Informática y Título Propio en Robótica, Universidad Francisco de Vitoria",
+                    "Desarrollo de Aplicaciones Multiplataforma, CES Juan Pablo Segundo"
+                ],
+                "experiencia_trabajo": [
+                    "Desarrollador Backend, Duagon Iberia",
+                    "Desarrollador Backend, KPMG (Becario)"
+                ],
+                "nombre": "Julian",
+                "porcentaje_educacion": 40.0,
+                "porcentaje_experiencia": 35.0,
+                "porcentaje_habilidades": 20.0,
+                "porcentaje_idiomas": 5.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 7,
+                "resumenCandidato": "El candidato posee una sólida formación académica en ingeniería informática y experiencia en desarrollo backend con Java y Spring. Su participación en proyectos con tecnologías modernas y la migración de sistemas heredados demuestran sus habilidades y capacidad de adaptación.",
+                "nombre_archivo_cv": "JulianManuelGarciaBaena_CV_actualizado_v2 (1).pdf"
+            },
+            {
+                "apellidos": "Rodríguez Rodríguez",
+                "apto": false,
+                "educacion": [
+                    "Máster en Orientación e Intervención Psicopedagógica",
+                    "Maestra Especialista en Audición y Lenguaje",
+                    "Grado en Magisterio de Primaria con mención especializada en Audición y Lenguaje"
+                ],
+                "experiencia_trabajo": [
+                    "Apoyo específico de alumnos con necesidades educativas especiales como maestra especialista en audición y lenguaje",
+                    "Clases de refuerzo educativo de lengua castellana y literatura para alumnos de 1º y 2º de la ESO",
+                    "Atención a las necesidades específicas del alumnado",
+                    "Impartición de clases con modalidad online y/o presencial",
+                    "Socorrista en piscinas e instalaciones acuáticas"
+                ],
+                "nombre": "Noelia",
+                "porcentaje_educacion": 0.0,
+                "porcentaje_experiencia": 0.0,
+                "porcentaje_habilidades": 0.0,
+                "porcentaje_idiomas": 0.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 0,
+                "razonesNoAptitud": "La experiencia y formación de Noelia Rodríguez Rodríguez no se alinean con las habilidades requeridas para un puesto de Desarrollador de Software Java. Su experiencia se centra en la educación y la atención a alumnos con necesidades especiales, sin mostrar habilidades de programación o desarrollo de software.",
+                "nombre_archivo_cv": "NoeliaRodriguezCV.pdf"
+            },
+            {
+                "apellidos": "Jose Paniagua Falo",
+                "apto": true,
+                "educacion": [
+                    "Ingeniería Informática en Universidad Francisco de Vitoria"
+                ],
+                "experiencia_trabajo": [
+                    "Data Scientist Intern en Engie GEMS-Spain",
+                    "Director of Strategy and Data Governance for Project NLC"
+                ],
+                "nombre": "Pedro",
+                "porcentaje_educacion": 30.0,
+                "porcentaje_experiencia": 35.0,
+                "porcentaje_habilidades": 25.0,
+                "porcentaje_idiomas": 10.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 7,
+                "resumenCandidato": "Pedro posee una sólida formación en ingeniería informática con especialización en robótica, además de experiencia en ciencia de datos e inteligencia artificial, lo que le convierte en un candidato adecuado para un puesto de desarrollador de software Java, aunque con ciertas carencias en experiencia con el lenguaje Java. Su experiencia en proyectos de datos y su dominio de Python, junto con habilidades de comunicación y resolución de problemas, son puntos a su favor.",
+                "nombre_archivo_cv": "PedroJosePaniaguaFaloCV.pdf"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-04-20T17:13:36.577780",
+        "puesto": "Desarrollador de software java",
+        "resultados": [
+            {
+                "apellidos": "Ramirez Cardenas",
+                "apto": true,
+                "educacion": [
+                    "Cambridge Certifications",
+                    "TOEFL, SAT (C1 English Level)",
+                    "LLM Engineering: Master AI, Language Models and Agents",
+                    "Google IT Automation with Python",
+                    "BI courses provided by Telefónica"
+                ],
+                "experiencia_trabajo": [
+                    "Data Scientist (06/08/2024-Present) Telefónica Educación Digital",
+                    "Artificial Intelligence Research Intern (01/09/2023-31/07/2024) CEIEC Research Institute",
+                    "Junior Software Engineer (01/06/2023-30/07/2023) AyD Software SL",
+                    "Software Engineer Intern (01/06/2022-30/07/2022) AyD Software SL",
+                    "Software Engineer Intern (01/06/2021-30/07/2021) AyD Software SL"
+                ],
+                "nombre": "Guillermo",
+                "porcentaje_educacion": 30.0,
+                "porcentaje_experiencia": 35.0,
+                "porcentaje_habilidades": 25.0,
+                "porcentaje_idiomas": 10.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 8,
+                "resumenCandidato": "Guillermo posee una sólida formación académica y una amplia experiencia en desarrollo de software, inteligencia artificial y ciencia de datos. Su experiencia en Telefónica y en el CEIEC Research Institute demuestra su capacidad para trabajar en proyectos de alta complejidad.  Además, su participación en proyectos personales como VIT y su voluntariado demuestran su compromiso social y su capacidad para la resolución de problemas.",
+                "nombre_archivo_cv": "GuillermoRamirez_CV.pdf"
+            },
+            {
+                "apellidos": "Muñoz Rojas",
+                "apto": true,
+                "educacion": [
+                    "Grado en Ingeniería Informática y Título propio en Ciberseguridad y Hacking Ético (Universidad Francisco de Vitoria, Septiembre 2020 – Junio 2024)",
+                    "Ciclo Formativo Superior en Desarrollo de Aplicaciones Multiplataforma (Universidad Europea de Madrid, Septiembre 2018 – Junio 2020)"
+                ],
+                "experiencia_trabajo": [
+                    "Analista de seguridad en Zerolynx (Septiembre 2023-Actualmente): Auditorías web, externas, internas y dispositivos móviles; Forense; Apoyo técnico en proyectos de Red Team",
+                    "Administrador de Base de Datos, Gestor Web y Desarrollador de Software en Resgreen S.L. (Noviembre 2022-Septiembre 2023): Gestión de información en BBDD Access; Desarrollo de software para BBDD en Visual Basic; Creación y gestión de página web"
+                ],
+                "nombre": "Javier",
+                "porcentaje_educacion": 35.0,
+                "porcentaje_experiencia": 35.0,
+                "porcentaje_habilidades": 20.0,
+                "porcentaje_idiomas": 10.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 7,
+                "resumenCandidato": "Javier posee una sólida formación académica en Ingeniería Informática y Ciberseguridad, complementada con experiencia en desarrollo de software, administración de bases de datos y gestión web. Su experiencia en Zerolynx y Resgreen S.L. demuestra su capacidad para realizar auditorías, tareas de forense y desarrollo de software, mostrando una adaptación a entornos tecnológicos diversos.  El dominio del inglés (nivel B2) y las certificaciones en penetration testing son puntos a favor. Aunque la experiencia no se centra específicamente en Java, sus habilidades y conocimientos tecnológicos son transferibles.",
+                "nombre_archivo_cv": "JavierMuñozRojasCV.pdf"
+            },
+            {
+                "apellidos": "Manuel García Baena",
+                "apto": true,
+                "educacion": [
+                    "Ingeniería Informática y Título Propio en Robótica, Universidad Francisco de Vitoria",
+                    "Desarrollo de Aplicaciones Multiplataforma, CES Juan Pablo Segundo"
+                ],
+                "experiencia_trabajo": [
+                    "Desarrollador Backend, Duagon Iberia",
+                    "Desarrollador Backend, KPMG (Becario)"
+                ],
+                "nombre": "Julian",
+                "porcentaje_educacion": 45.0,
+                "porcentaje_experiencia": 25.0,
+                "porcentaje_habilidades": 20.0,
+                "porcentaje_idiomas": 10.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 7,
+                "resumenCandidato": "El candidato presenta un perfil adecuado para un puesto de desarrollador Java de nivel junior. Su formación en ingeniería informática y su experiencia laboral en desarrollo backend, utilizando tecnologías como Java y Spring, lo hacen un candidato viable.  Además, muestra un conocimiento de metodologías ágiles y manejo de herramientas como Git y Jira.",
+                "nombre_archivo_cv": "JulianManuelGarciaBaena_CV_actualizado_v2 (1).pdf"
+            },
+            {
+                "apellidos": "Rodríguez Rodríguez",
+                "apto": false,
+                "educacion": [
+                    "Máster en Orientación e Intervención Psicopedagógica",
+                    "Maestra Especialista en Audición y Lenguaje",
+                    "Grado en Magisterio de Primaria con mención especializada en Audición y Lenguaje",
+                    "Bachillerato de Ciencias Sociales"
+                ],
+                "experiencia_trabajo": [
+                    "Apoyo específico de los Alumnos con Necesidades Educativas Especiales como Maestra especialista en Audición y Lenguaje",
+                    "Clases de refuerzo educativo de Lengua Castellana y Literatura para alumnos de 1º y 2º de la ESO",
+                    "Atención a las necesidades específicas del alumnado",
+                    "Impartición de clases con modalidad online y/o presencial.",
+                    "Ayudar a alumnos de todos los cursos de primaria en una o varias asignaturas.",
+                    "Uso de diferentes métodos de enseñanza adaptados al tipo de alumnado",
+                    "Observación y participación en el centro.",
+                    "Organización de documentos oficiales y programas.",
+                    "Aprender recursos manipulativos dentro del aula.",
+                    "Alcance de objetivos y de áreas competenciales.",
+                    "Especializarme en la mención de Audición y Lenguaje",
+                    "Observación y participación en el centro.",
+                    "Organización de documentos oficiales y programas.",
+                    "Aprender recursos manipulativos dentro del aula.",
+                    "Alcance de objetivos y de áreas competenciales.",
+                    "Observación y participación en las aulas.",
+                    "Propuestas de trabajo para los alumnos.",
+                    "Desarrollo de competencias curriculares.",
+                    "Realizar técnicas de salvamento acuático, en caso necesario.",
+                    "Reconocer y manejar adecuadamente el equipamiento básico.",
+                    "Identificar y actuar correctamente ante lesiones en el medio acuático.",
+                    "Supervisar la limpieza de las instalaciones, control de niveles de pH y cloro.",
+                    "Velar por el cumplimiento de la normativa de la piscina.",
+                    "Garantizar la seguridad de todos los usuarios.",
+                    "Realizar técnicas de salvamento acuático, en caso necesario.",
+                    "Reconocer y manejar adecuadamente el equipamiento básico.",
+                    "Identificar y actuar correctamente ante lesiones en el medio acuático.",
+                    "Supervisar la limpieza de las instalaciones, control de niveles de pH y cloro.",
+                    "Velar por el cumplimiento de la normativa de la piscina.",
+                    "Garantizar la seguridad de todos los usuarios"
+                ],
+                "nombre": "Noelia",
+                "porcentaje_educacion": 40.0,
+                "porcentaje_experiencia": 15.0,
+                "porcentaje_habilidades": 20.0,
+                "porcentaje_idiomas": 10.0,
+                "porcentaje_otros": 15.0,
+                "puntuacionPuesto": 2,
+                "razonesNoAptitud": "La experiencia laboral de Noelia se centra en la educación y no muestra habilidades ni experiencia en desarrollo de software Java.  Aunque tiene un grado y un máster, no son relevantes para el puesto.  El dominio del inglés no es suficiente para compensar la falta de experiencia y formación adecuada.",
+                "nombre_archivo_cv": "NoeliaRodriguezCV.pdf"
+            },
+            {
+                "apellidos": "Jose Paniagua Falo",
+                "apto": false,
+                "educacion": [
+                    "Ingeniería Informática en Universidad Francisco de Vitoria"
+                ],
+                "experiencia_trabajo": [
+                    "Data Scientist Intern en Engie GEMS-Spain",
+                    "Director of Strategy and Data Governance for Project NLC"
+                ],
+                "nombre": "Pedro",
+                "porcentaje_educacion": 30.0,
+                "porcentaje_experiencia": 20.0,
+                "porcentaje_habilidades": 15.0,
+                "porcentaje_idiomas": 10.0,
+                "porcentaje_otros": 25.0,
+                "puntuacionPuesto": 3,
+                "razonesNoAptitud": "Aunque el candidato demuestra habilidades en ciencia de datos y experiencia en proyectos relevantes, su experiencia y formación no se ajustan directamente al perfil de Desarrollador de Software Java.  No se mencionan experiencias con Java o tecnologías relacionadas en su currículum.",
+                "nombre_archivo_cv": "PedroJosePaniaguaFaloCV.pdf"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-04-20T19:06:47.024864",
+        "puesto": "Desarrollador de software java",
+        "resultados": [
+            {
+                "apellidos": "Ramirez Cardenas",
+                "apto": true,
+                "educacion": [
+                    "Computer Engineer with own degree in Robotics and Internet of Things",
+                    "Cambridge Certifications",
+                    "TOEFL, SAT (C1 English Level)",
+                    "LLM Engineering: Master AI, Language Models and Agents",
+                    "Google IT Automation with Python",
+                    "BI courses provided by Telefónica"
+                ],
+                "experiencia_trabajo": [
+                    "Data Scientist (Telefónica Educación Digital)",
+                    "Artificial Intelligence Research Intern (CEIEC Research Institute)",
+                    "Junior Software Engineer (AyD Software SL)",
+                    "Software Engineer Intern (AyD Software SL)"
+                ],
+                "nombre": "Guillermo",
+                "porcentaje_educacion": 30.0,
+                "porcentaje_experiencia": 35.0,
+                "porcentaje_habilidades": 25.0,
+                "porcentaje_idiomas": 10.0,
+                "porcentaje_otros": 0,
+                "puntuacionPuesto": 8,
+                "resumenCandidato": "Guillermo posee una sólida formación académica y una experiencia laboral significativa en el campo de la inteligencia artificial, con especialización en modelos generativos y experiencia en desarrollo de software. Su experiencia en Telefónica y otros entornos demuestra sus capacidades en proyectos de IA, el desarrollo de APIs REST, y la colaboración en equipos.  Aunque su experiencia con Java no es explícitamente detallada, sus habilidades en Python y otros lenguajes de programación, así como su experiencia en proyectos de desarrollo de software, sugieren una alta adaptabilidad y la capacidad de aprender rápidamente nuevas tecnologías.",
+                "nombre_archivo_cv": "GuillermoRamirez_CV.pdf"
+            },
+            {
+                "apellidos": "Muñoz Rojas",
+                "apto": true,
+                "educacion": [
+                    "Grado en Ingeniería Informática y Título propio en Ciberseguridad y Hacking Ético (Universidad Francisco de Vitoria)",
+                    "Ciclo Formativo Superior en Desarrollo de Aplicaciones Multiplataforma (Universidad Europea de Madrid)"
+                ],
+                "experiencia_trabajo": [
+                    "Analista de seguridad en Zerolynx",
+                    "Administrador de Base de Datos, Gestor Web y Desarrollador de Software en Resgreen S.L."
+                ],
+                "nombre": "Javier",
+                "porcentaje_educacion": 35.0,
+                "porcentaje_experiencia": 35.0,
+                "porcentaje_habilidades": 20.0,
+                "porcentaje_idiomas": 10.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 7,
+                "resumenCandidato": "Javier posee una sólida formación académica en ingeniería informática y ciberseguridad, complementada con experiencia laboral relevante en roles de analista de seguridad y desarrollo de software. Su perfil destaca por la combinación de habilidades técnicas y de gestión, así como su capacidad de adaptación y trabajo en equipo.",
+                "nombre_archivo_cv": "JavierMuñozRojasCV.pdf"
+            },
+            {
+                "apellidos": "Manuel García Baena",
+                "apto": true,
+                "educacion": [
+                    "Ingeniería Informática y Título Propio en Robótica, Universidad Francisco de Vitoria (2020-2025)",
+                    "Desarrollo de Aplicaciones Multiplataforma, CES Juan Pablo Segundo (2018-2020)"
+                ],
+                "experiencia_trabajo": [
+                    "Desarrollador Backend, Duagon Iberia | Junio 2024 – Octubre 2024",
+                    "Desarrollador Backend, KPMG (Becario) | Octubre 2023 – Mayo 2024"
+                ],
+                "nombre": "Julian",
+                "porcentaje_educacion": 45.0,
+                "porcentaje_experiencia": 25.0,
+                "porcentaje_habilidades": 20.0,
+                "porcentaje_idiomas": 10.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 7,
+                "resumenCandidato": "Julian presenta un perfil adecuado para un puesto de Desarrollador Java de nivel junior. Su formación académica en Ingeniería Informática y su experiencia, aunque breve, en roles de desarrollo backend en empresas reconocidas como KPMG y Duagon Iberia, demuestran su interés y capacidad para el desarrollo de software.  Su dominio de Java, Springboot y metodologías ágiles, junto a su conocimiento de Linux, son puntos fuertes.  La experiencia como becario en KPMG es especialmente valorable.",
+                "nombre_archivo_cv": "JulianManuelGarciaBaena_CV_actualizado_v2 (1).pdf"
+            },
+            {
+                "apellidos": "Rodríguez Rodríguez",
+                "apto": false,
+                "educacion": [
+                    "Máster en Orientación e Intervención Psicopedagógica",
+                    "Maestra Especialista en Audición y Lenguaje",
+                    "Grado en Magisterio de Primaria con mención especializada en Audición y Lenguaje",
+                    "Bachillerato de Ciencias Sociales"
+                ],
+                "experiencia_trabajo": [
+                    "Apoyo específico de alumnos con necesidades educativas especiales como maestra especialista en audición y lenguaje",
+                    "Clases de refuerzo educativo de lengua castellana y literatura para alumnos de 1º y 2º de la ESO",
+                    "Atención a las necesidades específicas del alumnado",
+                    "Impartición de clases con modalidad online y/o presencial",
+                    "Socorrista de piscina en cooperativa"
+                ],
+                "nombre": "Noelia",
+                "porcentaje_educacion": 0.0,
+                "porcentaje_experiencia": 0.0,
+                "porcentaje_habilidades": 0.0,
+                "porcentaje_idiomas": 0.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 0,
+                "razonesNoAptitud": "La candidata no tiene experiencia en desarrollo de software Java y su formación académica, aunque extensa en pedagogía, no se relaciona con el puesto solicitado.",
+                "nombre_archivo_cv": "NoeliaRodriguezCV.pdf"
+            },
+            {
+                "apellidos": "Jose Paniagua Falo",
+                "apto": false,
+                "educacion": [
+                    "Ingeniería Informática en Universidad Francisco de Vitoria"
+                ],
+                "experiencia_trabajo": [
+                    "Data Scientist Intern en Engie GEMS-Spain",
+                    "Director of Strategy and Data Governance for Project NLC"
+                ],
+                "nombre": "Pedro",
+                "porcentaje_educacion": 40.0,
+                "porcentaje_experiencia": 15.0,
+                "porcentaje_habilidades": 20.0,
+                "porcentaje_idiomas": 10.0,
+                "porcentaje_otros": 15.0,
+                "puntuacionPuesto": 3,
+                "razonesNoAptitud": "Falta de experiencia en Java y el perfil se centra más en ciencia de datos e inteligencia artificial que en desarrollo de software Java.  Aunque su formación es relevante, la experiencia no coincide con lo requerido para el puesto de desarrollador Java.",
+                "nombre_archivo_cv": "PedroJosePaniaguaFaloCV.pdf"
+            }
+        ]
+    }
+]
