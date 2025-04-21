@@ -6,13 +6,13 @@ graph TD
 
     subgraph Servidores Backend
         B[Backend Autenticación<br>auth_backend.py<br>Flask :5002]
-        C[Backend Procesamiento CVs<br>tu_backend_principal.py<br>Flask :5001]
+        C[Backend Procesamiento curriculums<br>tu_backend_principal.py<br>Flask :5001]
     end
 
     subgraph Almacenamiento
         D[usuarios.json<br>Datos de Usuario Hash]
         E[historial_ejecuciones.json<br>Historial Análisis IA]
-        F[cvs_recibidos/<br>Archivos CV (Modo Manual)]
+        F[cvs_recibidos/<br>Archivos cv (Modo Manual)]
     end
 
     %% Conexiones principales
