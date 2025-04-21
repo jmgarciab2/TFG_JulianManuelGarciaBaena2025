@@ -1,4 +1,4 @@
-graph TD
+'''mermaid
     %% Definición de los componentes principales (Subgraphs) - CORREGIDO
     subgraph Frontend ("Interfaz de Usuario - Streamlit")
         A[Inicio Usuario] --> B{¿Usuario Autenticado?}
@@ -134,3 +134,4 @@ graph TD
     O -.-> P %% O lleva a la acción P
     R --> S %% R lleva a la acción S (mostrar historial)
     T --> U %% T lleva a la acción U (mostrar detalles)
+graph TD
