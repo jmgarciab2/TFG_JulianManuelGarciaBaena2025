@@ -1,31 +1,28 @@
 ```mermaid
 graph TD
     subgraph Frontend
-        A[FrontPantallaVisualizacion.py<br>Streamlit App]
+        A[Frontend App]
     end
 
-    subgraph Servidores Backend
-        B[Backend Autenticación<br>auth_backend.py<br>Flask :5002]
-        C[Backend Procesamiento curriculums<br>tu_backend_principal.py<br>Flask :5001]
+    subgraph Backend Servers
+        B[Auth Backend :5002]
+        C[CV Backend :5001]
     end
 
-    subgraph Almacenamiento
-        D[usuarios.json<br>Datos de Usuario Hash]
-        E[historial_ejecuciones.json<br>Historial Análisis IA]
-        F[cvs_recibidos/<br>Archivos cv (Modo Manual)]
+    subgraph Storage
+        D[usuarios.json]
+        E[historial_ejecuciones.json]
+        F[cvs_recibidos/]
     end
 
-    %% Conexiones principales
-    A --> B; %% Interacción Frontend <-> Auth Backend
-    A --> C; %% Interacción Frontend <-> CV Backend
+    A --> B;
+    A --> C;
 
-    B --> D; %% Auth Backend <-> Almacenamiento Usuarios
+    B --> D;
 
-    %% Conexiones del CV Backend a Almacenamiento (depende del modo)
-    C --> E; %% CV Backend <-> Almacenamiento Historial (Modo IA)
-    C --> F; %% CV Backend <-> Almacenamiento Archivos (Modo Manual)
+    C --> E;
+    C --> F;
 
-    %% Flujo de respuestas (para claridad adicional)
-    B -- Respuesta Login/Registro --> A;
-    C -- Resultados Procesamiento<br>Historial/Detalles<br>Confirmación Guardado --> A;
+    B -- Auth Response --> A;
+    C -- CV Results/History --> A;
 ```
