@@ -1,4 +1,10 @@
-'''mermaid
+```markdown
+# Mi Proyecto con CVisualizer
+
+Este es el diagrama de flujo que describe la arquitectura y funcionalidad del programa CVisualizer.
+
+```mermaid
+graph TD
     %% Definición de los componentes principales (Subgraphs) - CORREGIDO
     subgraph Frontend ("Interfaz de Usuario - Streamlit")
         A[Inicio Usuario] --> B{¿Usuario Autenticado?}
@@ -134,4 +140,3 @@
     O -.-> P %% O lleva a la acción P
     R --> S %% R lleva a la acción S (mostrar historial)
     T --> U %% T lleva a la acción U (mostrar detalles)
-graph TD
