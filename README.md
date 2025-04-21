@@ -1,3 +1,4 @@
+```mermaid
 graph TD
     %% Definición de los componentes principales (Subgraphs)
     subgraph Frontend (Interfaz de Usuario - Streamlit)
