@@ -900,5 +900,886 @@
                 "nombre_archivo_cv": "PedroJosePaniaguaFaloCV.pdf"
             }
         ]
+    },
+    {
+        "timestamp": "2025-04-21T14:52:00.723149",
+        "puesto": "Desarrollador de software java",
+        "resultados": [
+            {
+                "apellidos": "Ramirez Cardenas",
+                "apto": false,
+                "educacion": [
+                    "Computer Engineer with own degree in Robotics and Internet Of Things",
+                    "Cambridge Certifications",
+                    "TOEFL, SAT (C1 English Level)",
+                    "LLM Engineering: Master AI, Language Models and Agents",
+                    "Google IT Automation with Python",
+                    "BI courses provided by Telefónica"
+                ],
+                "experiencia_trabajo": [
+                    "Data Scientist (06/08/2024-Present) Telefónica Educación Digital",
+                    "Artificial Intelligence Research Intern (01/09/2023-31/07/2024) CEIEC Research Institute",
+                    "Junior Software Engineer (01/06/2023-30/07/2023) AyD Software SL",
+                    "Software Engineer Intern (01/06/2022-30/07/2022) AyD Software SL",
+                    "Software Engineer Intern (01/06/2021-30/07/2021) AyD Software SL"
+                ],
+                "nombre": "Guillermo",
+                "porcentaje_educacion": 15.0,
+                "porcentaje_experiencia": 20.0,
+                "porcentaje_habilidades": 10.0,
+                "porcentaje_idiomas": 5.0,
+                "porcentaje_otros": 5.0,
+                "puntuacionPuesto": 4,
+                "razonesNoAptitud": "Si bien el candidato posee experiencia en desarrollo de software, la falta de experiencia con Java y Spring Boot, junto con una formación académica que no se especifica como Grado o superior, lo hace no apto para el puesto.  Su experiencia en otros lenguajes de programación y frameworks es relevante, pero no suficiente para el puesto de Desarrollador Java.",
+                "nombre_archivo_cv": "GuillermoRamirez_CV.pdf"
+            },
+            {
+                "apellidos": "Muñoz Rojas",
+                "apto": false,
+                "educacion": [
+                    "Grado en Ingeniería Informática y título propio en Hacking Ético y Ciberseguridad en la Universidad Francisco de Vitoria (Septiembre 2020-Junio 2024)",
+                    "Ciclo Formativo Superior en Desarrollo de Aplicaciones Multiplataforma en la Universidad Europea de Madrid (Septiembre 2018-Junio 2020)"
+                ],
+                "experiencia_trabajo": [
+                    "Analista de seguridad en Zerolynx (Septiembre 2023-Actualidad): Auditorías web, internas, externas y de dispositivos móviles; proyectos forenses; apoyo técnico en proyectos de Red Team.",
+                    "Administrador de Base de Datos, Gestor Web y Desarrollador de Software en Resgreen S.L. (Noviembre 2022-Septiembre 2023): Gestión de información en BBDD Access; desarrollo de software en Visual Basic; creación y gestión de página web"
+                ],
+                "nombre": "Javier",
+                "porcentaje_educacion": 0.3,
+                "porcentaje_experiencia": 0.175,
+                "porcentaje_habilidades": 0.2,
+                "porcentaje_idiomas": 0.1,
+                "porcentaje_otros": 0.025,
+                "puntuacionPuesto": 4,
+                "razonesNoAptitud": "Si bien el candidato cuenta con experiencia en desarrollo de software y bases de datos, su experiencia no se centra en Java.  La falta de mención de Java y frameworks relacionados, así como la ausencia de proyectos que demuestren habilidades específicas en el lenguaje, son las principales razones para no considerarlo apto.",
+                "nombre_archivo_cv": "JavierMuñozRojasCV.pdf"
+            },
+            {
+                "apellidos": "Manuel García Baena",
+                "apto": true,
+                "educacion": [
+                    "Ingeniería Informática y Título Propio en Robótica, Universidad Francisco de Vitoria (2020-2025)",
+                    "Desarrollo de Aplicaciones Multiplataforma, CES Juan Pablo Segundo (2018-2020)"
+                ],
+                "experiencia_trabajo": [
+                    "Desarrollador Backend, Duagon Iberia (Junio 2024 - Octubre 2024)",
+                    "Desarrollador Backend, KPMG (Becario) (Octubre 2023 - Mayo 2024)"
+                ],
+                "nombre": "Julian",
+                "porcentaje_educacion": 30.0,
+                "porcentaje_experiencia": 35.0,
+                "porcentaje_habilidades": 15.0,
+                "porcentaje_idiomas": 7.0,
+                "porcentaje_otros": 3.0,
+                "puntuacionPuesto": 8,
+                "resumenCandidato": "El candidato posee una sólida formación académica y experiencia laboral relevante en desarrollo backend con Java y Springboot.  Su experiencia en proyectos con tecnologías punteras y metodologías ágiles, junto con sus habilidades de trabajo en equipo, lo convierten en un candidato adecuado para el puesto. El dominio del inglés (nivel B2) es un punto a favor.",
+                "nombre_archivo_cv": "JulianManuelGarciaBaena_CV_actualizado_v2 (1).pdf"
+            },
+            {
+                "apellidos": "Rodríguez Rodríguez",
+                "apto": false,
+                "educacion": [
+                    "Máster en Orientación e Intervención Psicopedagógica (UCJC)",
+                    "Maestra Especialista en Audición y Lenguaje (Academica de Oposición Possum)",
+                    "Grado en Magisterio de Primaria con mención especializada en Audición y Lenguaje (UCM)",
+                    "Bachillerato de Ciencias Sociales (Colegio Pureza de María)"
+                ],
+                "experiencia_trabajo": [
+                    "Apoyo específico de alumnos con necesidades educativas especiales como maestra especialista en audición y lenguaje (Colegio Público Abén Hazám)",
+                    "Clases de refuerzo educativo de lengua castellana y literatura para alumnos de 1º y 2º de la ESO (IES Antonio Fraguas Forges)",
+                    "Atención a las necesidades específicas del alumnado (Colegio Público de Educación Especial Santiago Ramón y Cajal)",
+                    "Profesora de clases particulares (online y/o presencial)",
+                    "Socorrista de piscina en cooperativas (Bersar S.L., Maxi Pool S.L.)"
+                ],
+                "nombre": "Noelia",
+                "porcentaje_educacion": 0.2,
+                "porcentaje_experiencia": 0.0,
+                "porcentaje_habilidades": 0.0,
+                "porcentaje_idiomas": 0.1,
+                "porcentaje_otros": 0.05,
+                "puntuacionPuesto": 2,
+                "razonesNoAptitud": "El candidato no tiene experiencia laboral relevante en desarrollo de software Java, ni se mencionan habilidades técnicas relacionadas con el puesto. El dominio del inglés es nivel B2, pero no es el idioma principal. Aunque su formación académica es relevante, carece de experiencia práctica en el área de desarrollo de software.",
+                "nombre_archivo_cv": "NoeliaRodriguezCV.pdf"
+            },
+            {
+                "apellidos": "Jose Paniagua Falo",
+                "apto": false,
+                "educacion": [
+                    "Ingeniería Informática en Universidad Francisco de Vitoria (Septiembre 2020 - 2024)"
+                ],
+                "experiencia_trabajo": [
+                    "Data Scientist Intern en Engie GEMS-Spain (Septiembre 2023 - Agosto 2024)",
+                    "Director of Strategy and Data Governance for Project NLC (Septiembre 2020 - Actualidad)"
+                ],
+                "nombre": "Pedro",
+                "porcentaje_educacion": 1.2,
+                "porcentaje_experiencia": 1.75,
+                "porcentaje_habilidades": 0.8,
+                "porcentaje_idiomas": 1.0,
+                "porcentaje_otros": 0.25,
+                "puntuacionPuesto": 4,
+                "razonesNoAptitud": "El candidato no menciona experiencia con Java ni Springboot en su currículum, lo que es crucial para el puesto de Desarrollador de Software Java. Si bien su experiencia en ciencia de datos e inteligencia artificial es notable, no se alinea con los requisitos del puesto.",
+                "nombre_archivo_cv": "PedroJosePaniaguaFaloCV.pdf"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-04-21T14:54:00.251661",
+        "puesto": "Desarrollador de software java",
+        "resultados": [
+            {
+                "apellidos": "Ramirez Cardenas",
+                "apto": false,
+                "educacion": [
+                    "Computer Engineer with own degree in Robotics and Internet of Things",
+                    "Cambridge Certifications",
+                    "TOEFL, SAT (C1 English Level)",
+                    "LLM Engineering: Master AI, Language Models and Agents",
+                    "Google IT Automation with Python",
+                    "BI courses provided by Telefónica"
+                ],
+                "experiencia_trabajo": [
+                    "Data Scientist (Telefónica Educación Digital)",
+                    "Artificial Intelligence Research Intern (CEIEC Research Institute)",
+                    "Junior Software Engineer (AyD Software SL)",
+                    "Software Engineer Intern (AyD Software SL)"
+                ],
+                "nombre": "Guillermo",
+                "porcentaje_educacion": 2.0,
+                "porcentaje_experiencia": 2.0,
+                "porcentaje_habilidades": 1.25,
+                "porcentaje_idiomas": 2.0,
+                "porcentaje_otros": 0.75,
+                "puntuacionPuesto": 4,
+                "razonesNoAptitud": "Si bien el candidato posee habilidades técnicas en diversas áreas de la informática, incluyendo experiencia con frameworks relevantes, lenguajes de programación, bases de datos y metodologías ágiles,  su experiencia laboral directa con Java es limitada o no se menciona explícitamente. Su formación académica tampoco se centra específicamente en Java.  Por lo tanto, aunque muestra un perfil adecuado en otras áreas de la informática, no cumple con los requisitos específicos para un puesto de Desarrollador de Software Java.",
+                "nombre_archivo_cv": "GuillermoRamirez_CV.pdf"
+            },
+            {
+                "apellidos": "Muñoz Rojas",
+                "apto": false,
+                "educacion": [
+                    "Grado en Ingeniería Informática y título propio en Hacking Ético y Ciberseguridad en Universidad Francisco de Vitoria (Madrid) (Septiembre 2020-Junio 2024)",
+                    "Ciclo Formativo Superior en Desarrollo de Aplicaciones Multiplataforma en Universidad Europea de Madrid (Villaviciosa de Odón) (Septiembre 2018-Junio 2020)"
+                ],
+                "experiencia_trabajo": [
+                    "Analista de seguridad en Zerolynx (Septiembre 2023-Actualidad): Auditorías web, internas, externas y dispositivos móviles; Forense; Apoyo técnico en proyectos de Red Team",
+                    "Administrador de base de datos, Gestor Web y Desarrollador de Software en Resgreen S.L (Noviembre 2022-Septiembre 2023): Gestión de información en BBDD Access; Desarrollo de software para BBDD en Visual Basic; Creación y gestión de página web"
+                ],
+                "nombre": "Javier",
+                "porcentaje_educacion": 2.0,
+                "porcentaje_experiencia": 2.0,
+                "porcentaje_habilidades": 0.0,
+                "porcentaje_idiomas": 4.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 4,
+                "razonesNoAptitud": "Aunque el candidato posee experiencia en desarrollo de software y bases de datos, su experiencia no está centrada en Java.  La formación en Ingeniería Informática y el título propio en ciberseguridad no garantizan dominio de Java.  Además, el nivel de inglés B2 no cumple con el requisito del idioma principal para el puesto.",
+                "nombre_archivo_cv": "JavierMuñozRojasCV.pdf"
+            },
+            {
+                "apellidos": "Manuel García Baena",
+                "apto": true,
+                "educacion": [
+                    "Ingeniería Informática y Título Propio en Robótica, Universidad Francisco de Vitoria (2020-2025)",
+                    "Desarrollo de Aplicaciones Multiplataforma, CES Juan Pablo Segundo (2018-2020)"
+                ],
+                "experiencia_trabajo": [
+                    "Desarrollador Backend, Duagon Iberia (Junio 2024 - Octubre 2024)",
+                    "Desarrollador Backend, KPMG (Becario) (Octubre 2023 - Mayo 2024)"
+                ],
+                "nombre": "Julian",
+                "porcentaje_educacion": 40.0,
+                "porcentaje_experiencia": 8.0,
+                "porcentaje_habilidades": 22.0,
+                "porcentaje_idiomas": 15.0,
+                "porcentaje_otros": 15.0,
+                "puntuacionPuesto": 7,
+                "resumenCandidato": "Julian posee una sólida formación académica en ingeniería informática y experiencia práctica en desarrollo backend con Java y Spring. Su experiencia en proyectos de desarrollo de aplicaciones web, migración de sistemas y uso de metodologías ágiles lo hacen un candidato adecuado para el puesto. El dominio del idioma inglés y la actitud proactiva completan su perfil.",
+                "nombre_archivo_cv": "JulianManuelGarciaBaena_CV_actualizado_v2 (1).pdf"
+            },
+            {
+                "apellidos": "Rodríguez Rodríguez",
+                "apto": false,
+                "educacion": [
+                    "Máster en Orientación e Intervención Psicopedagógica (UCJC)",
+                    "Maestra Especialista en Audición y Lenguaje (Academia de Oposición Possum)",
+                    "Grado en Magisterio de Primaria con mención especializada en Audición y Lenguaje (UCM)"
+                ],
+                "experiencia_trabajo": [
+                    "Apoyo específico a alumnos con necesidades educativas especiales como maestra especialista en audición y lenguaje (Colegio Público Abén Hazám)",
+                    "Clases de refuerzo educativo de lengua castellana y literatura para alumnos de 1º y 2º de la ESO (IES Antonio Fraguas Forges)",
+                    "Atención a las necesidades específicas del alumnado (Colegio Público de Educación Especial Santiago Ramón y Cajal)",
+                    "Profesora de clases particulares (online y presencial)"
+                ],
+                "nombre": "Noelia",
+                "porcentaje_educacion": 1.0,
+                "porcentaje_experiencia": 0.0,
+                "porcentaje_habilidades": 0.0,
+                "porcentaje_idiomas": 0.0,
+                "porcentaje_otros": 1.0,
+                "puntuacionPuesto": 2,
+                "razonesNoAptitud": "La experiencia laboral del candidato no se alinea con las habilidades requeridas para un puesto de desarrollador de software Java.  Su formación académica tampoco es relevante para este perfil profesional. El dominio del inglés no está especificado como suficiente. ",
+                "nombre_archivo_cv": "NoeliaRodriguezCV.pdf"
+            },
+            {
+                "apellidos": "Jose Paniagua Falo",
+                "apto": false,
+                "educacion": [
+                    "Ingeniería Informática en Universidad Francisco de Vitoria (Septiembre 2020 - 2024)"
+                ],
+                "experiencia_trabajo": [
+                    "Data Scientist Intern en Engie GEMS-Spain (Septiembre 2023 - Agosto 2024)",
+                    "Director of Strategy and Data Governance for Project NLC (Septiembre 2020 - Actualidad)"
+                ],
+                "nombre": "Pedro",
+                "porcentaje_educacion": 1.6,
+                "porcentaje_experiencia": 2.0,
+                "porcentaje_habilidades": 0.0,
+                "porcentaje_idiomas": 1.4,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 4,
+                "razonesNoAptitud": "Aunque el candidato demuestra habilidades en análisis de datos, ciencia de datos e inteligencia artificial, su experiencia y formación no están directamente relacionadas con el desarrollo de software Java.  La falta de experiencia en programación Java es un factor determinante para la no aptitud.",
+                "nombre_archivo_cv": "PedroJosePaniaguaFaloCV.pdf"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-04-21T15:50:06.399361",
+        "puesto": "Desarrollador de software java",
+        "resultados": [
+            {
+                "apellidos": "Ramirez Cardenas",
+                "apto": false,
+                "educacion": [
+                    "Computer Engineer with own degree in Robotics and Internet of Things",
+                    "Cambridge Certifications",
+                    "TOEFL, SAT (C1 English Level)",
+                    "LLM Engineering: Master AI, Language Models and Agents",
+                    "Google IT Automation with Python",
+                    "BI courses provided by Telefónica"
+                ],
+                "experiencia_trabajo": [
+                    "Data Scientist (Telefónica Educación Digital)",
+                    "Artificial Intelligence Research Intern (CEIEC Research Institute)",
+                    "Junior Software Engineer (AyD Software SL)",
+                    "Software Engineer Intern (AyD Software SL)"
+                ],
+                "nombre": "Guillermo",
+                "porcentaje_educacion": 20.0,
+                "porcentaje_experiencia": 6.0,
+                "porcentaje_habilidades": 23.5,
+                "porcentaje_idiomas": 8.0,
+                "porcentaje_otros": 2.5,
+                "puntuacionPuesto": 5,
+                "razonesNoAptitud": "Si bien el candidato posee habilidades técnicas relevantes y experiencia en desarrollo de software, su formación académica no se detalla completamente y no se especifica un título universitario formal en Ingeniería Informática o similar. Además, si bien tiene experiencia con Python y Django, la experiencia directa con Java es limitada, lo que reduce su idoneidad para el puesto.  La falta de experiencia laboral específica en desarrollo de software Java es un factor determinante en esta evaluación.",
+                "nombre_archivo_cv": "GuillermoRamirez_CV.pdf"
+            },
+            {
+                "apellidos": "Muñoz Rojas",
+                "apto": false,
+                "educacion": [
+                    "Grado en Ingeniería Informática y título propio en Hacking Ético y Ciberseguridad en la Universidad Francisco de Vitoria (Madrid) (Septiembre 2020-Junio 2024)",
+                    "Ciclo Formativo Superior en Desarrollo de Aplicaciones Multiplataforma en la Universidad Europea de Madrid (Villaviciosa de Odón) (Septiembre 2018-Junio 2020)"
+                ],
+                "experiencia_trabajo": [
+                    "Analista de seguridad en Zerolynx (Septiembre 2023-Actualidad): Auditorías web, internas, externas y dispositivos móviles; análisis forense; apoyo en desarrollo de proyectos de Red Team.",
+                    "Administrador de Base de Datos, Gestor Web y Desarrollador de Software en Resgreen S.L. (Noviembre 2022-Septiembre 2023): Gestión de información en BBDD Access; desarrollo de software en Visual Basic; creación y gestión de página web"
+                ],
+                "nombre": "Javier",
+                "porcentaje_educacion": 20.0,
+                "porcentaje_experiencia": 5.0,
+                "porcentaje_habilidades": 20.0,
+                "porcentaje_idiomas": 1.6,
+                "porcentaje_otros": 3.4,
+                "puntuacionPuesto": 5,
+                "razonesNoAptitud": "Si bien el candidato posee un título en Ingeniería Informática y experiencia en desarrollo de software, la experiencia laboral no se centra específicamente en Java y la descripción no detalla habilidades específicas relacionadas con Java. Su experiencia en bases de datos y desarrollo web podría ser relevante, pero no es suficiente para considerarlo apto para un puesto de Desarrollador Java sin más información.",
+                "nombre_archivo_cv": "JavierMuñozRojasCV.pdf"
+            },
+            {
+                "apellidos": "Manuel García Baena",
+                "apto": true,
+                "educacion": [
+                    "Ingeniería Informática y Título Propio en Robótica, Universidad Francisco de Vitoria (2020-2025)",
+                    "Desarrollo de Aplicaciones Multiplataforma, CES Juan Pablo Segundo (2018-2020)"
+                ],
+                "experiencia_trabajo": [
+                    "Desarrollador Backend, Duagon Iberia (Junio 2024 - Octubre 2024)",
+                    "Desarrollador Backend, KPMG (Becario) (Octubre 2023 - Mayo 2024)"
+                ],
+                "nombre": "Julian",
+                "porcentaje_educacion": 28.0,
+                "porcentaje_experiencia": 7.0,
+                "porcentaje_habilidades": 24.5,
+                "porcentaje_idiomas": 0.8,
+                "porcentaje_otros": 5.7,
+                "puntuacionPuesto": 7,
+                "resumenCandidato": "El candidato presenta un perfil adecuado para el puesto de Desarrollador Java, con experiencia relevante en desarrollo backend utilizando Java y Spring, así como conocimientos en metodologías ágiles y herramientas como Git, Jira y Confluence.  Su formación académica en Ingeniería Informática es sólida, reforzada por un título propio en robótica. Aunque su experiencia es relativamente corta, demuestra una trayectoria creciente y una rápida asimilación de nuevas tecnologías.",
+                "nombre_archivo_cv": "JulianManuelGarciaBaena_CV_actualizado_v2 (1).pdf"
+            },
+            {
+                "apellidos": "Rodríguez Rodríguez",
+                "apto": false,
+                "educacion": [
+                    "Máster en Orientación e Intervención Psicopedagógica (UCJC)",
+                    "Maestra Especialista en Audición y Lenguaje (Academica de Oposición Possum)",
+                    "Grado en Magisterio de Primaria con mención especializada en Audición y Lenguaje (UCM)",
+                    "Bachillerato de Ciencias Sociales (Colegio Pureza de María)"
+                ],
+                "experiencia_trabajo": [
+                    "Apoyo específico a alumnos con necesidades educativas especiales como maestra especialista en audición y lenguaje (Colegio Público Abén Hazám)",
+                    "Clases de refuerzo educativo de lengua castellana y literatura para alumnos de 1º y 2º de la ESO (IES Antonio Fraguas Forges)",
+                    "Atención a las necesidades específicas del alumnado (Colegio Público de Educación Especial Santiago Ramón y Cajal)",
+                    "Profesora de clases particulares (online y presencial)",
+                    "Socorrista de piscina en cooperativas (Bersar S.L, Maxi Pool S.L)"
+                ],
+                "nombre": "Noelia",
+                "porcentaje_educacion": 1.2,
+                "porcentaje_experiencia": 1.0,
+                "porcentaje_habilidades": 0.7,
+                "porcentaje_idiomas": 0.8,
+                "porcentaje_otros": 0.3,
+                "puntuacionPuesto": 3,
+                "razonesNoAptitud": "La experiencia laboral y la formación académica del candidato no se ajustan al perfil requerido para un desarrollador de software Java.  No se evidencia experiencia en programación, desarrollo de software o tecnologías relacionadas con Java.  Su formación se centra en la educación y la psicopedagogía.",
+                "nombre_archivo_cv": "NoeliaRodriguezCV.pdf"
+            },
+            {
+                "apellidos": "Jose Paniagua Falo",
+                "apto": false,
+                "educacion": [
+                    "Ingeniería Informática en Universidad Francisco de Vitoria"
+                ],
+                "experiencia_trabajo": [
+                    "Data Scientist Intern en Engie GEMS-Spain",
+                    "Director of Strategy and Data Governance for Project NLC"
+                ],
+                "nombre": "Pedro",
+                "porcentaje_educacion": 2.0,
+                "porcentaje_experiencia": 1.0,
+                "porcentaje_habilidades": 1.0,
+                "porcentaje_idiomas": 0.8,
+                "porcentaje_otros": 0.7,
+                "puntuacionPuesto": 4,
+                "razonesNoAptitud": "Falta de experiencia en desarrollo Java. Si bien el candidato tiene experiencia en ciencia de datos y roles de liderazgo, su experiencia no es directamente relevante para el puesto de desarrollador de software Java. La formación en Ingeniería informática es un punto positivo, pero la falta de habilidades específicas en Java impide considerarlo apto.",
+                "nombre_archivo_cv": "PedroJosePaniaguaFaloCV.pdf"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-04-26T10:59:50.380862",
+        "puesto": "Desarrollador de software java",
+        "resultados": [
+            {
+                "apellidos": "Ramirez Cardenas",
+                "apto": false,
+                "educacion": [
+                    "Ingeniero Informático con especialización en Robótica e Internet de las Cosas"
+                ],
+                "experiencia_trabajo": [
+                    "Data Scientist (Telefónica Educación Digital): Implementación de IA generativa en plataformas de e-learning.",
+                    "Artificial Intelligence Research Intern (CEIEC Research Institute): Diseño de modelos de IA generativa para reconstrucción de imágenes.",
+                    "Junior Software Engineer (AyD Software SL): Desarrollo e implementación de métodos de pago en una API REST.",
+                    "Software Engineer Intern (AyD Software SL): Contribución al desarrollo de software usando Python y Django para una solución REST.",
+                    "Software Engineer Intern (AyD Software SL): Participación en el desarrollo de AyD64 v8.0 GES (ERP) y AyD64 v8.0 TPV (Punto de Venta)."
+                ],
+                "nombre": "Guillermo",
+                "porcentaje_educacion": 2.4,
+                "porcentaje_experiencia": 2.8,
+                "porcentaje_habilidades": 1.6,
+                "porcentaje_idiomas": 0.8,
+                "porcentaje_otros": 0.4,
+                "puntuacionPuesto": 4,
+                "razonesNoAptitud": "Si bien el candidato posee experiencia en desarrollo de software y manejo de tecnologías relevantes, su experiencia con Java es limitada o no se menciona explícitamente en su currículum.  La falta de experiencia laboral claramente enfocada en desarrollo Java, y la formación académica que no se detalla completamente impide considerar al candidato como apto para el puesto. ",
+                "nombre_archivo_cv": "GuillermoRamirez_CV.pdf"
+            },
+            {
+                "apellidos": "Muñoz Rojas",
+                "apto": false,
+                "educacion": [
+                    "Grado en Ingeniería Informática y título propio en Hacking Ético y Ciberseguridad en la Universidad Francisco de Vitoria (Septiembre 2020-Junio 2024)",
+                    "Ciclo Formativo Superior en Desarrollo de Aplicaciones Multiplataforma en la Universidad Europea de Madrid (Septiembre 2018-Junio 2020)"
+                ],
+                "experiencia_trabajo": [
+                    "Analista de seguridad en Zerolynx (Septiembre 2023-Actualidad): Auditorías web, internas, externas y de dispositivos móviles; Forense; Apoyo técnico en proyectos de Red Team",
+                    "Administrador de Base de Datos, Gestor Web y Desarrollador de Software en Resgreen S.L. (Noviembre 2022-Septiembre 2023): Gestión de información en BBDD Access; Desarrollo de software en Visual Basic; Creación y gestión de página web"
+                ],
+                "nombre": "Javier",
+                "porcentaje_educacion": 0.3,
+                "porcentaje_experiencia": 0.175,
+                "porcentaje_habilidades": 0.1,
+                "porcentaje_idiomas": 0.1,
+                "porcentaje_otros": 0.025,
+                "puntuacionPuesto": 4,
+                "razonesNoAptitud": "Aunque el candidato muestra experiencia en desarrollo de software, esta no se centra en Java. Su formación en Ingeniería Informática y el ciclo formativo superior son relevantes, pero la falta de experiencia específica en Java y la poca mención a habilidades de programación en Java impide considerarlo apto para este puesto. El dominio del inglés a nivel B2 es un punto positivo.",
+                "nombre_archivo_cv": "JavierMuñozRojasCV.pdf"
+            },
+            {
+                "apellidos": "Manuel García Baena",
+                "apto": true,
+                "educacion": [
+                    "Ingeniería Informática y Título Propio en Robótica, Universidad Francisco de Vitoria (2020-2025)",
+                    "Desarrollo de Aplicaciones Multiplataforma, CES Juan Pablo Segundo (2018-2020)"
+                ],
+                "experiencia_trabajo": [
+                    "Desarrollador Backend, Duagon Iberia (Junio 2024 - Octubre 2024)",
+                    "Desarrollador Backend, KPMG (Becario) (Octubre 2023 - Mayo 2024)"
+                ],
+                "nombre": "Julian",
+                "porcentaje_educacion": 30.0,
+                "porcentaje_experiencia": 30.0,
+                "porcentaje_habilidades": 25.0,
+                "porcentaje_idiomas": 10.0,
+                "porcentaje_otros": 5.0,
+                "puntuacionPuesto": 8,
+                "resumenCandidato": "Julian posee una sólida formación académica en ingeniería informática y experiencia práctica en desarrollo backend con Java y Spring. Su experiencia en proyectos de desarrollo de aplicaciones web, migración de sistemas y uso de metodologías ágiles, junto con sus habilidades en herramientas como Git, Jira y Confluence, lo hacen un candidato adecuado para el puesto.",
+                "nombre_archivo_cv": "JulianManuelGarciaBaena_CV_actualizado_v2 (1).pdf"
+            },
+            {
+                "apellidos": "Rodríguez Rodríguez",
+                "apto": false,
+                "educacion": [
+                    "Máster en Orientación e Intervención Psicopedagógica (UCJC)",
+                    "Maestra Especialista en Audición y Lenguaje (Academica de Oposición Possum)",
+                    "Grado en Magisterio de Primaria con mención especializada en Audición y Lenguaje (UCM)"
+                ],
+                "experiencia_trabajo": [],
+                "nombre": "Noelia",
+                "porcentaje_educacion": 2.0,
+                "porcentaje_experiencia": 0.0,
+                "porcentaje_habilidades": 0.0,
+                "porcentaje_idiomas": 1.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 2,
+                "razonesNoAptitud": "La experiencia laboral y la formación académica del candidato no se ajustan a los requerimientos de un puesto de Desarrollador de Software Java. No se encontraron habilidades técnicas o palabras clave relevantes en el currículum.",
+                "nombre_archivo_cv": "NoeliaRodriguezCV.pdf"
+            },
+            {
+                "apellidos": "Jose Paniagua Falo",
+                "apto": false,
+                "educacion": [
+                    "Ingeniería Informática en Universidad Francisco de Vitoria (2020-2024)"
+                ],
+                "experiencia_trabajo": [
+                    "Data Scientist Intern en Engie GEMS-Spain (2023-2024)",
+                    "Director of Strategy and Data Governance for Project NLC (2020-presente)"
+                ],
+                "nombre": "Pedro",
+                "porcentaje_educacion": 1.2,
+                "porcentaje_experiencia": 0.175,
+                "porcentaje_habilidades": 0.4,
+                "porcentaje_idiomas": 1.0,
+                "porcentaje_otros": 0.25,
+                "puntuacionPuesto": 4,
+                "razonesNoAptitud": "Aunque el candidato demuestra experiencia en ciencia de datos e inteligencia artificial, su experiencia y habilidades no se alinean directamente con las necesidades de un puesto de Desarrollador de Software Java.  La falta de mención de Java u otros lenguajes de programación relevantes para el desarrollo de software, así como la ausencia de proyectos relacionados, son factores determinantes para la baja puntuación.",
+                "nombre_archivo_cv": "PedroJosePaniaguaFaloCV.pdf"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-04-26T11:01:42.513959",
+        "puesto": "Carnicero",
+        "resultados": [
+            {
+                "apellidos": "Ramirez Cardenas",
+                "apto": false,
+                "educacion": [
+                    "Computer Engineer with own degree in Robotics and Internet of Things"
+                ],
+                "experiencia_trabajo": [],
+                "nombre": "Guillermo",
+                "porcentaje_educacion": 0.0,
+                "porcentaje_experiencia": 0.0,
+                "porcentaje_habilidades": 0.0,
+                "porcentaje_idiomas": 0.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 0,
+                "razonesNoAptitud": "El candidato no posee experiencia laboral relevante en el sector de la carnicería, ni formación académica relacionada.  Su perfil se centra en ingeniería informática y desarrollo de software, sin ninguna conexión con las habilidades o conocimientos necesarios para el puesto de carnicero.",
+                "nombre_archivo_cv": "GuillermoRamirez_CV.pdf"
+            },
+            {
+                "apellidos": "Muñoz Rojas",
+                "apto": false,
+                "educacion": [
+                    "Grado en Ingeniería Informática y Título propio en Ciberseguridad y Hacking Ético (Universidad Francisco de Vitoria)",
+                    "Ciclo Formativo Superior en Desarrollo de Aplicaciones Multiplataforma (Universidad Europea de Madrid)"
+                ],
+                "experiencia_trabajo": [],
+                "nombre": "Javier",
+                "porcentaje_educacion": 0.0,
+                "porcentaje_experiencia": 0.0,
+                "porcentaje_habilidades": 0.0,
+                "porcentaje_idiomas": 0.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 0,
+                "razonesNoAptitud": "El candidato no posee experiencia laboral ni formación académica relacionada con el puesto de carnicero.  Su experiencia es en el área de informática y ciberseguridad.",
+                "nombre_archivo_cv": "JavierMuñozRojasCV.pdf"
+            },
+            {
+                "apellidos": "Manuel García Baena",
+                "apto": false,
+                "educacion": [
+                    "INGENIERIA INFORMÁTICA Y TITULO PROPIO EN ROBÓTICA, UNIVERSIDAD FRANCISCO DE VITORIA",
+                    "DESARROLLO DE APLICACIONES MULTIPLATAFORMA, CES JUAN PABLO SEGUNDO"
+                ],
+                "experiencia_trabajo": [],
+                "nombre": "Julian",
+                "porcentaje_educacion": 0.0,
+                "porcentaje_experiencia": 0.0,
+                "porcentaje_habilidades": 0.0,
+                "porcentaje_idiomas": 0.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 0,
+                "razonesNoAptitud": "El candidato no tiene experiencia laboral relevante en el sector cárnico. Su formación y experiencia se centran en el desarrollo de software y tecnologías de la información, sin ninguna relación con el puesto de carnicero.  No se encontraron palabras clave relacionadas con el sector cárnico.",
+                "nombre_archivo_cv": "JulianManuelGarciaBaena_CV_actualizado_v2 (1).pdf"
+            },
+            {
+                "apellidos": "Rodríguez Rodríguez",
+                "apto": false,
+                "educacion": [
+                    "Máster en Orientación e Intervención Psicopedagógica (UCJC)",
+                    "Maestra Especialista en Audición y Lenguaje (Academía de Oposición Possum)",
+                    "Grado en Magisterio de Primaria con mención especializada en Audición y Lenguaje (UCM)",
+                    "Bachillerato de Ciencias Sociales (Colegio Pureza de María)"
+                ],
+                "experiencia_trabajo": [],
+                "nombre": "Noelia",
+                "porcentaje_educacion": 0.0,
+                "porcentaje_experiencia": 0.0,
+                "porcentaje_habilidades": 0.0,
+                "porcentaje_idiomas": 0.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 0,
+                "razonesNoAptitud": "La candidata no posee experiencia laboral en el sector cárnico, ni formación académica relacionada con la carnicería.  Su formación y experiencia se centran en la educación y la psicopedagogía.",
+                "nombre_archivo_cv": "NoeliaRodriguezCV.pdf"
+            },
+            {
+                "apellidos": "Jose Paniagua Falo",
+                "apto": false,
+                "educacion": [
+                    "Ingeniería Informática, Universidad Francisco de Vitoria"
+                ],
+                "experiencia_trabajo": [],
+                "nombre": "Pedro",
+                "porcentaje_educacion": 0.0,
+                "porcentaje_experiencia": 0.0,
+                "porcentaje_habilidades": 0.0,
+                "porcentaje_idiomas": 0.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 0,
+                "razonesNoAptitud": "El candidato no presenta ninguna experiencia laboral relacionada con el puesto de carnicero, su formación académica es en ingeniería informática, y no se mencionan habilidades o conocimientos relacionados con la manipulación de carne o el trabajo en carnicería. Además, el idioma principal del candidato es español, no se incluye entre los idiomas prioritarios (inglés y francés) y tampoco se mencionan palabras clave relacionadas con la tecnología.",
+                "nombre_archivo_cv": "PedroJosePaniaguaFaloCV.pdf"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-04-27T23:54:12.330718",
+        "puesto": "Desarrollador de software java",
+        "resultados": [
+            {
+                "apellidos": "Ramirez Cardenas",
+                "apto": false,
+                "educacion": [
+                    "Computer Engineer with own degree in Robotics and Internet of Things",
+                    "Cambridge Certifications",
+                    "TOEFL, SAT (C1 English Level)",
+                    "LLM Engineering: Master AI, Language Models and Agents",
+                    "Google IT Automation with Python",
+                    "BI courses provided by Telefónica"
+                ],
+                "experiencia_trabajo": [
+                    "Data Scientist en Telefónica Educación Digital",
+                    "Artificial Intelligence Research Intern en CEIEC Research Institute",
+                    "Junior Software Engineer en AyD Software SL",
+                    "Software Engineer Intern en AyD Software SL"
+                ],
+                "nombre": "Guillermo",
+                "porcentaje_educacion": 20.0,
+                "porcentaje_experiencia": 28.0,
+                "porcentaje_habilidades": 12.0,
+                "porcentaje_idiomas": 10.0,
+                "porcentaje_otros": 30.0,
+                "puntuacionPuesto": 4,
+                "razonesNoAptitud": "Si bien el candidato posee una amplia experiencia en Inteligencia Artificial y desarrollo de software, su experiencia con Java es limitada.  La falta de mención explícita de Java en sus habilidades o experiencias laborales, junto con la ausencia de un título universitario específico en Ingeniería Informática o similar, reducen su idoneidad para el puesto de Desarrollador de Software Java.  Su experiencia en otros lenguajes de programación y frameworks es relevante, pero no suficiente para compensar esta carencia.",
+                "nombre_archivo_cv": "GuillermoRamirez_CV.pdf"
+            },
+            {
+                "apellidos": "Muñoz Rojas",
+                "apto": true,
+                "educacion": [
+                    "Grado en Ingeniería Informática y Título propio en Ciberseguridad y Hacking Ético en Universidad Francisco de Vitoria (Madrid) (Septiembre 2020 – Junio 2024)",
+                    "Ciclo Formativo Superior en Desarrollo de Aplicaciones Multiplataforma en Universidad Europea de Madrid (Villaviciosa de Odón – Madrid) (Septiembre 2018 – Junio 2020)"
+                ],
+                "experiencia_trabajo": [
+                    "Analista de seguridad en Zerolynx (Septiembre 2023 - Actualmente)",
+                    "Administrador de Base de Datos, Gestor Web y Desarrollador de Software en Resgreen S.L. (Noviembre 2022 - Septiembre 2023)"
+                ],
+                "nombre": "Javier",
+                "porcentaje_educacion": 0.3,
+                "porcentaje_experiencia": 0.35,
+                "porcentaje_habilidades": 0.2,
+                "porcentaje_idiomas": 0.1,
+                "porcentaje_otros": 0.05,
+                "puntuacionPuesto": 7,
+                "resumenCandidato": "Javier posee una sólida formación en ingeniería informática y ciberseguridad, complementada con experiencia práctica en desarrollo de software, administración de bases de datos y gestión web. Su perfil demuestra capacidad de adaptación, trabajo en equipo y proactividad, requisitos importantes para el puesto.",
+                "nombre_archivo_cv": "JavierMuñozRojasCV.pdf"
+            },
+            {
+                "apellidos": "Manuel García Baena",
+                "apto": true,
+                "educacion": [
+                    "Ingeniería Informática y Título Propio en Robótica, Universidad Francisco de Vitoria (2020-2025)",
+                    "Desarrollo de Aplicaciones Multiplataforma, CES Juan Pablo Segundo (2018-2020)"
+                ],
+                "experiencia_trabajo": [
+                    "Desarrollador Backend, Duagon Iberia (Junio 2024 - Octubre 2024)",
+                    "Desarrollador Backend, KPMG (Becario) (Octubre 2023 - Mayo 2024)"
+                ],
+                "nombre": "Julian",
+                "porcentaje_educacion": 30.0,
+                "porcentaje_experiencia": 30.0,
+                "porcentaje_habilidades": 25.0,
+                "porcentaje_idiomas": 10.0,
+                "porcentaje_otros": 5.0,
+                "puntuacionPuesto": 8,
+                "resumenCandidato": "Julian presenta un perfil adecuado para el puesto de Desarrollador Java. Su experiencia en desarrollo backend con Java y Spring, junto con su formación en ingeniería informática, lo hacen un candidato competitivo.  El conocimiento de metodologías ágiles y su experiencia con herramientas como Git, Jira y Confluence son también puntos a favor.",
+                "nombre_archivo_cv": "JulianManuelGarciaBaena_CV_actualizado_v2 (1).pdf"
+            },
+            {
+                "apellidos": "Rodríguez Rodríguez",
+                "apto": false,
+                "educacion": [
+                    "Máster en Orientación e Intervención Psicopedagógica (UCJC)",
+                    "Maestra Especialista en Audición y Lenguaje (Academica de Oposición Possum)",
+                    "Grado en Magisterio de Primaria con mención especializada en Audición y Lenguaje (UCM)",
+                    "Bachillerato de Ciencias Sociales (Colegio Pureza de María)"
+                ],
+                "experiencia_trabajo": [
+                    "Apoyo específico de alumnos con necesidades educativas especiales como maestra especialista en Audición y Lenguaje (Colegio Público Abén Hazám)",
+                    "Clases de refuerzo educativo de Lengua Castellana y Literatura para alumnos de 1º y 2º de la ESO (IES Antonio Fraguas Forges)",
+                    "Atención a las necesidades específicas del alumnado (Colegio Público de Educación Especial Santiago Ramón y Cajal)",
+                    "Impartición de clases particulares (online y/o presencial) a alumnos de primaria",
+                    "Socorrista en piscinas (Bersar S.L y Maxi Pool S.L)"
+                ],
+                "nombre": "Noelia",
+                "porcentaje_educacion": 0.15,
+                "porcentaje_experiencia": 0.1,
+                "porcentaje_habilidades": 0.0,
+                "porcentaje_idiomas": 0.1,
+                "porcentaje_otros": 0.05,
+                "puntuacionPuesto": 2,
+                "razonesNoAptitud": "La experiencia laboral y la formación académica del candidato no se alinean con las necesidades del puesto de Desarrollador de Software Java. No se encuentran palabras clave como 'Programador' o habilidades de programación en su currículum. Su dominio del inglés (nivel B2) no cumple con el requisito de ser el idioma principal.",
+                "nombre_archivo_cv": "NoeliaRodriguezCV.pdf"
+            },
+            {
+                "apellidos": "Jose Paniagua Falo",
+                "apto": false,
+                "educacion": [
+                    "Ingeniería Informática en Universidad Francisco de Vitoria (Septiembre 2020 - 2024)"
+                ],
+                "experiencia_trabajo": [
+                    "Data Scientist Intern en Engie GEMS-Spain (Septiembre 2023 - Agosto 2024)",
+                    "Director of Strategy and Data Governance for Project NLC (Septiembre 2020 - Actualidad)"
+                ],
+                "nombre": "Pedro",
+                "porcentaje_educacion": 0.3,
+                "porcentaje_experiencia": 0.175,
+                "porcentaje_habilidades": 0.2,
+                "porcentaje_idiomas": 0.1,
+                "porcentaje_otros": 0.025,
+                "puntuacionPuesto": 4,
+                "razonesNoAptitud": "Aunque el candidato demuestra habilidades en análisis de datos, ciencia de datos e IA, su experiencia y formación no se enfocan directamente en desarrollo de software Java.  La falta de experiencia con Java es un factor determinante para rechazar su candidatura. Además, si bien maneja varios lenguajes de programación, el currículum no destaca logros o proyectos relevantes con lenguajes relacionados con Java. ",
+                "nombre_archivo_cv": "PedroJosePaniaguaFaloCV.pdf"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-03T13:49:23.024163",
+        "puesto": "Socorrista",
+        "resultados": [
+            {
+                "apellidos": "Ramirez Cardenas",
+                "apto": false,
+                "educacion": [
+                    "Computer Engineer with own degree in Robotics and Internet of Things"
+                ],
+                "experiencia_trabajo": [],
+                "nombre": "Guillermo",
+                "porcentaje_educacion": 0.0,
+                "porcentaje_experiencia": 0.0,
+                "porcentaje_habilidades": 0.0,
+                "porcentaje_idiomas": 0.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 0,
+                "razonesNoAptitud": "El candidato no tiene experiencia laboral relevante como socorrista.  Su formación y habilidades, aunque extensas en el campo de la ingeniería informática y la inteligencia artificial, no se aplican al puesto de socorrista.",
+                "nombre_archivo_cv": "GuillermoRamirez_CV.pdf"
+            },
+            {
+                "apellidos": "Muñoz Rojas",
+                "apto": false,
+                "educacion": [
+                    "Grado en Ingeniería Informática y Título propio en Ciberseguridad y Hacking Ético (Universidad Francisco de Vitoria)",
+                    "Ciclo Formativo Superior en Desarrollo de Aplicaciones Multiplataforma (Universidad Europea de Madrid)"
+                ],
+                "experiencia_trabajo": [],
+                "nombre": "Javier",
+                "porcentaje_educacion": 0.0,
+                "porcentaje_experiencia": 0.0,
+                "porcentaje_habilidades": 0.0,
+                "porcentaje_idiomas": 0.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 0,
+                "razonesNoAptitud": "El candidato no presenta experiencia laboral relevante para un puesto de socorrista. Su formación académica se centra en informática y ciberseguridad, sin relación con las habilidades y conocimientos necesarios para este rol.",
+                "nombre_archivo_cv": "JavierMuñozRojasCV.pdf"
+            },
+            {
+                "apellidos": "Manuel García Baena",
+                "apto": false,
+                "educacion": [
+                    "INGENIERIA INFORMÁTICA Y TITULO PROPIO EN ROBÓTICA, UNIVERSIDAD FRANCISCO DE VITORIA",
+                    "DESARROLLO DE APLICACIONES MULTIPLATAFORMA, CES JUAN PABLO SEGUNDO"
+                ],
+                "experiencia_trabajo": [],
+                "nombre": "Julian",
+                "porcentaje_educacion": 0.0,
+                "porcentaje_experiencia": 0.0,
+                "porcentaje_habilidades": 0.0,
+                "porcentaje_idiomas": 0.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 0,
+                "razonesNoAptitud": "El candidato no presenta experiencia laboral relevante para un puesto de socorrista.  Su formación académica en ingeniería informática y robótica no se relaciona con las habilidades y conocimientos necesarios para este rol.",
+                "nombre_archivo_cv": "JulianManuelGarciaBaena_CV_actualizado_v2 (1).pdf"
+            },
+            {
+                "apellidos": "Rodríguez Rodríguez",
+                "apto": true,
+                "educacion": [],
+                "experiencia_trabajo": [
+                    "Socorrista en piscinas e instalaciones acuáticas (Cruz Roja Española)",
+                    "Socorrista de piscina en cooperativa Pelaires (Bersar S.L)",
+                    "Socorrista de piscina en cooperativa Los Rosales (Maxi Pool S.L)"
+                ],
+                "nombre": "Noelia",
+                "porcentaje_experiencia": 0.72,
+                "porcentaje_habilidades": 0.28,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 8,
+                "resumenCandidato": "Noelia posee una amplia experiencia como socorrista, mostrando un historial consistente en diferentes empresas.  Su experiencia laboral en este ámbito es un factor determinante para su aptitud para este puesto.",
+                "nombre_archivo_cv": "NoeliaRodriguezCV.pdf"
+            },
+            {
+                "apellidos": "Jose Paniagua Falo",
+                "apto": false,
+                "educacion": [
+                    "Ingeniería Informática, Universidad Francisco de Vitoria"
+                ],
+                "experiencia_trabajo": [],
+                "nombre": "Pedro",
+                "porcentaje_educacion": 0.0,
+                "porcentaje_experiencia": 0.0,
+                "porcentaje_habilidades": 0.0,
+                "porcentaje_idiomas": 0.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 0,
+                "razonesNoAptitud": "El candidato no presenta experiencia laboral relevante para un puesto de socorrista. Su experiencia se centra en ciencia de datos e inteligencia artificial.",
+                "nombre_archivo_cv": "PedroJosePaniaguaFaloCV.pdf"
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-03T13:52:28.525309",
+        "puesto": "Socorrista",
+        "resultados": [
+            {
+                "apellidos": "Ramirez Cardenas",
+                "apto": false,
+                "educacion": [
+                    "Computer Engineer with own degree in Robotics and Internet of Things"
+                ],
+                "experiencia_trabajo": [],
+                "nombre": "Guillermo",
+                "porcentaje_educacion": 0.0,
+                "porcentaje_experiencia": 0.0,
+                "porcentaje_habilidades": 0.0,
+                "porcentaje_idiomas": 0.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 0,
+                "razonesNoAptitud": "El candidato no presenta experiencia laboral relevante para el puesto de socorrista. Su formación en ingeniería informática no se relaciona con las funciones de un socorrista.",
+                "nombre_archivo_cv": "GuillermoRamirez_CV.pdf"
+            },
+            {
+                "apellidos": "Muñoz Rojas",
+                "apto": false,
+                "educacion": [
+                    "Grado en Ingeniería Informática y Título propio en Ciberseguridad y Hacking Ético (Septiembre 2020 – Junio 2024)",
+                    "Ciclo Formativo Superior en Desarrollo de Aplicaciones Multiplataforma (Septiembre 2018 – Junio 2020)"
+                ],
+                "experiencia_trabajo": [],
+                "nombre": "Javier",
+                "porcentaje_educacion": 0.0,
+                "porcentaje_experiencia": 0.0,
+                "porcentaje_habilidades": 0.0,
+                "porcentaje_idiomas": 0.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 0,
+                "razonesNoAptitud": "El candidato no presenta experiencia laboral relevante para un puesto de socorrista. Su formación académica se centra en informática y ciberseguridad, áreas no relacionadas con las funciones de un socorrista.",
+                "nombre_archivo_cv": "JavierMuñozRojasCV.pdf"
+            },
+            {
+                "apellidos": "Manuel García Baena",
+                "apto": false,
+                "educacion": [
+                    "INGENIERIA INFORMÁTICA Y TITULO PROPIO EN ROBÓTICA, UNIVERSIDAD FRANCISCO DE VITORIA",
+                    "DESARROLLO DE APLICACIONES MULTIPLATAFORMA, CES JUAN PABLO SEGUNDO"
+                ],
+                "experiencia_trabajo": [],
+                "nombre": "Julian",
+                "porcentaje_educacion": 0.0,
+                "porcentaje_experiencia": 100.0,
+                "porcentaje_habilidades": 0.0,
+                "porcentaje_idiomas": 0.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 0,
+                "razonesNoAptitud": "El candidato no presenta experiencia laboral relevante para el puesto de socorrista. Su formación académica tampoco se relaciona con las funciones de un socorrista.",
+                "nombre_archivo_cv": "JulianManuelGarciaBaena_CV_actualizado_v2 (1).pdf"
+            },
+            {
+                "apellidos": "Rodríguez Rodríguez",
+                "apto": true,
+                "educacion": [
+                    "Máster en Orientación e Intervención Psicopedagógica (UCJC)",
+                    "Maestra Especialista en Audición y Lenguaje (Academica de Oposición Possum)",
+                    "Grado en Magisterio de Primaria con mención en Audición y Lenguaje (UCM)"
+                ],
+                "experiencia_trabajo": [
+                    "Socorrista en piscinas e instalaciones acuáticas (Cruz Roja Española)",
+                    "Socorrista de piscina en cooperativa Pelaires (Bersar S.L)",
+                    "Socorrista de piscina en cooperativa Los Rosales (Maxi Pool S.L)"
+                ],
+                "nombre": "Noelia",
+                "porcentaje_educacion": 0.0,
+                "porcentaje_experiencia": 1.0,
+                "porcentaje_habilidades": 0.0,
+                "porcentaje_idiomas": 0.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 10,
+                "resumenCandidato": "Noelia posee una sólida experiencia como socorrista, con un historial consistente en diferentes empresas y periodos. Su experiencia laboral directa en el puesto la convierte en una candidata ideal.",
+                "nombre_archivo_cv": "NoeliaRodriguezCV.pdf"
+            },
+            {
+                "apellidos": "Jose Paniagua Falo",
+                "apto": false,
+                "educacion": [
+                    "Ingeniería Informática, Universidad Francisco de Vitoria"
+                ],
+                "experiencia_trabajo": [],
+                "nombre": "Pedro",
+                "porcentaje_educacion": 0.0,
+                "porcentaje_experiencia": 0.0,
+                "porcentaje_habilidades": 0.0,
+                "porcentaje_idiomas": 0.0,
+                "porcentaje_otros": 0.0,
+                "puntuacionPuesto": 0,
+                "razonesNoAptitud": "El candidato no presenta experiencia laboral relevante para el puesto de socorrista. Su formación en Ingeniería Informática no se relaciona con las habilidades y conocimientos necesarios para este puesto.",
+                "nombre_archivo_cv": "PedroJosePaniaguaFaloCV.pdf"
+            }
+        ]
     }
 ]

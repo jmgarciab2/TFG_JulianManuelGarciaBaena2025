@@ -1,3 +1,8 @@
+###### CODIGO ORIGINAL                             ######
+###### Julian Manuel García Baena                  ######
+###### TFG CVisualizer Backend Registros usuarios  ######
+###### Convocatoria Ordinaria 2025                 ######
+
 from flask import Flask, request, jsonify
 import os
 import json

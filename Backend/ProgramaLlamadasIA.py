@@ -1,3 +1,8 @@
+###### CODIGO ORIGINAL             ######
+###### Julian Manuel García Baena  ######
+###### TFG CVisualizer Backend IA  ######
+###### Convocatoria Ordinaria 2025 ######
+
 from google import genai
 from google.genai import types
 from flask import Flask, request, jsonify
@@ -6,16 +11,34 @@ import pathlib
 import json
 from typing import List, Optional
 from pydantic import BaseModel, Field
-from datetime import datetime # Para añadir timestamp
+from datetime import datetime
+# No importamos bcrypt ni nada de autenticación aquí
 
-client = genai.Client(api_key=os.environ.get("GOOGLE_API_2_KEY")) # Asegúrate de usar la KEY correcta si cambiaste
+# Asegúrate de que esta clave API es válida para Google GenAI
+# Se recomienda usar variables de entorno para las claves sensibles
+GOOGLE_API_KEY = os.environ.get("GOOGLE_API_2_KEY")
+if not GOOGLE_API_KEY:
+    print("Advertencia: La variable de entorno 'GOOGLE_API_2_KEY' no está configurada.")
+    print("Por favor, configura GOOGLE_API_2_KEY con tu clave de API de Google.")
+    # Si la clave no está configurada, el cliente de GenAI fallará.
+
+try:
+    client = genai.Client(api_key=GOOGLE_API_KEY)
+    # Opcional: Una pequeña prueba para verificar la conexión
+    # print("Conectado a la API de Google GenAI.")
+except Exception as e:
+    print(f"Error al inicializar el cliente de Google GenAI: {e}")
+    print("La funcionalidad de procesamiento de CVs NO funcionará sin una clave de API válida.")
+    client = None # Establecer cliente a None si falla la inicialización
 
 app = Flask(__name__)
 
 # --- Rutas y Archivos ---
-RUTA_HISTORIAL = "./historial_ejecuciones.json" # Archivo para guardar el historial
+# Archivo para guardar el historial de EJECUCIONES DE ANÁLISIS AI
+RUTA_HISTORIAL = "./historial_ejecuciones.json"
 
-# --- Modelos Pydantic (se mantienen igual) ---
+# --- Modelos Pydantic ---
+# Modelo para validar y estructurar la salida esperada de Gemini
 class Resultado(BaseModel):
     nombre: str
     apellidos: str
@@ -31,40 +54,45 @@ class Resultado(BaseModel):
     porcentaje_idiomas: Optional[float] = None
     porcentaje_otros: Optional[float] = None
 
-# --- Funciones Auxiliares (pasarStringaJson se mantiene, aunque con response_schema Gemini ya debería dar JSON directo) ---
+
+# --- Funciones Auxiliares ---
+
+# Función para parsear JSON incrustado (mantenida por robustez)
 def pasarStringaJson(text):
-    # Esta función puede ser menos necesaria si Gemini con response_schema es fiable,
-    # pero la mantenemos por si acaso.
+    """Extrae y parsea un objeto JSON de una cadena de texto."""
     start_index = text.find("{")
     if start_index != -1:
         end_index = text.rfind("}") + 1
-        if end_index != 0:
+        if end_index > start_index: # Asegurar que la llave de cierre está después de la de apertura
             json_string = text[start_index:end_index]
             try:
                 json_object = json.loads(json_string)
                 return json_object
             except json.JSONDecodeError as e:
-                print(f"Error al parsear JSON: {e}")
-                print(json_string)
+                print(f"Error al parsear JSON incrustado: {e}")
+                print(f"Cadena a parsear: {json_string}")
                 return None
         else:
-            print(text)
+            print(f"Advertencia: No se encontró una llave de cierre JSON válida en la cadena.")
+            print(f"Texto recibido: {text}")
             return None
     else:
-        print(text)
+        print(f"Advertencia: No se encontró una llave de apertura JSON en la cadena.")
+        print(f"Texto recibido: {text}")
         return None
 
-# --- Funciones para manejar el historial ---
+
+# --- Funciones para manejar el historial de Análisis AI ---
 
 def cargar_historial():
-    """Carga el historial de ejecuciones desde el archivo JSON."""
+    """Carga el historial de ejecuciones de análisis desde el archivo JSON."""
     if not os.path.exists(RUTA_HISTORIAL):
-        return []
+        return [] # Si el archivo no existe, retorna una lista vacía
     try:
         with open(RUTA_HISTORIAL, 'r', encoding='utf-8') as f:
             historial = json.load(f)
-            # Opcional: Validar la estructura del historial si es necesario
-            return historial
+            # Asegurarse de que es una lista
+            return historial if isinstance(historial, list) else []
     except json.JSONDecodeError:
         print(f"Advertencia: El archivo de historial '{RUTA_HISTORIAL}' está vacío o corrupto. Iniciando con historial vacío.")
         return []
@@ -73,15 +101,42 @@ def cargar_historial():
         return []
 
 def guardar_historial(historial):
-    """Guarda el historial de ejecuciones en el archivo JSON."""
+    """Guarda el historial de ejecuciones de análisis en el archivo JSON."""
     try:
+        # Asegurarse de que lo que se guarda es una lista
+        if not isinstance(historial, list):
+             print(f"Advertencia: Intentando guardar un historial que no es una lista. No se guardará.")
+             return
+
         with open(RUTA_HISTORIAL, 'w', encoding='utf-8') as f:
             json.dump(historial, f, indent=4, ensure_ascii=False)
     except Exception as e:
         print(f"Error al guardar el historial: {e}")
 
-# --- Función de procesamiento (se mantiene con ligeras modificaciones para la respuesta) ---
-def process_pdf(filepath_name, nombre_puesto, filtro_idioma=None, filtro_experiencia_min=None, filtro_palabras_clave=None, filtro_nivel_educativo=None, filtro_sector=None):
+# --- Función de procesamiento AI (MODIFICADA para aceptar pesos) ---
+def process_pdf_ai(
+    filepath_name,
+    nombre_puesto,
+    filtro_idioma=None,
+    filtro_experiencia_min=None,
+    filtro_palabras_clave=None,
+    filtro_nivel_educativo=None,
+    filtro_sector=None,
+    # NUEVO: Pesos recibidos del frontend
+    peso_experiencia=40,
+    peso_educacion=30,
+    peso_habilidades=20,
+    peso_idiomas=5,
+    peso_otros=5
+):
+    """
+    Procesa un PDF usando Google Gemini con filtros y pesos de evaluación personalizables.
+    Devuelve el resultado estructurado o None en caso de error.
+    """
+    if client is None:
+        print("Error: Cliente de Google GenAI no inicializado. La API no está disponible.")
+        return None
+
     file = pathlib.Path(filepath_name)
     pdf_bytes = file.read_bytes()
 
@@ -98,63 +153,59 @@ def process_pdf(filepath_name, nombre_puesto, filtro_idioma=None, filtro_experie
     if filtro_sector:
         prompt_filtros += f"- Busca candidatos con experiencia laboral relevante en el sector de {filtro_sector}.\n"
 
+    # Añadir los pesos personalizables al prompt
+    # Instruir a la IA a usar estos pesos para la evaluación y la puntuación
+    prompt_pesos_instruccion = f"""
+**Instrucciones de Evaluación Adicionales:**
+- Evalúa al candidato para el puesto de {nombre_puesto} basándote en los siguientes pesos relativos para cada criterio:
+    - Experiencia Laboral Relevante: {peso_experiencia}%
+    - Formación Académica Relevante: {peso_educacion}%
+    - Habilidades Técnicas y Soft Skills Aplicables: {peso_habilidades}%
+    - Dominio de Idiomas Relevantes: {peso_idiomas}%
+    - Otros Factores (consistencia del historial, logros específicos): {peso_otros}%
+- Utiliza estos pesos para guiar tu evaluación y la determinación de la puntuación de idoneidad (0-10) y la aptitud (True/False).
+"""
+
     prompt = f"""
-**Tarea:** Analiza el currículum de un candidato para el puesto de {nombre_puesto} y determina su idoneidad, ajustando la importancia relativa de la experiencia y la educación según el tipo de puesto.
+**Tarea:** Analiza el currículum de un candidato y determina su idoneidad para el puesto de {nombre_puesto}.
 
-**Instrucciones:**
+**Instrucciones Generales:**
 1. Actúa como un reclutador experto en selección de talento.
-2. Evalúa el currículum basándote únicamente en la información proporcionada y el nombre del puesto.
+2. Evalúa el currículum basándote únicamente en la información proporcionada en el documento.
 3. Compara el perfil del candidato con los mejores perfiles de CV con los que has sido entrenado.
-4. Define la importancia relativa de la experiencia laboral y la formación académica según el nivel de responsabilidad del puesto de {nombre_puesto}:
-    - **Alta responsabilidad (Gerentes, Directores, Especialistas Senior):**
-      - Experiencia Laboral Relevante: 40-50%
-      - Formación Académica Relevante: 20-30%
-    - **Nivel intermedio (Analistas, Coordinadores, Técnicos Especializados):**
-      - Experiencia Laboral Relevante: 30-40%
-      - Formación Académica Relevante: 30-40%
-    - **Entrada o becario:**
-      - Experiencia Laboral Relevante: 15-25%
-      - Formación Académica Relevante: 40-50%
-    - **Atención al cliente o ventas:**
-      - Experiencia Laboral Relevante: 30-40%
-      - Formación Académica Relevante: 25-35%
-    - **Habilidades Técnicas y Soft Skills Aplicables:** 20-25% (Importancia relativamente constante)
-    - **Dominio de Idiomas Relevantes:** 5-15% (Puede variar según el puesto)
-    - **Otros Factores (consistencia del historial, logros específicos):** 0-5% (Factor no condicionante)
 
-{"""5. Aplica los siguientes filtros:
+{prompt_pesos_instruccion}
+
+{"""**Filtros Aplicados (Considerar durante la evaluación):**
 """ + prompt_filtros if prompt_filtros else ""}
 
-6. Evalúa al candidato en cada uno de los criterios y asigna una puntuación relativa dentro del rango de porcentaje definido para el tipo de puesto.
-
-7. Suma los porcentajes obtenidos en cada criterio para generar una puntuación total de idoneidad (idealmente cercana al 100%). Convierte esta puntuación total a un valor entero entre 0 y 10 para el campo `puntuacionPuesto`.
-
-8. Determina si el candidato es apto (`apto`: True/False) basándote en la evaluación general, considerando que ninguna categoría individual es estrictamente eliminatoria (los rangos permiten flexibilidad).
-
-9. Genera un resumen breve de sus principales fortalezas (si es apto) o las razones de no selección (si no es apto).
+4. Basado en el análisis y los pesos proporcionados, evalúa al candidato en cada criterio.
+5. Determina una puntuación total de idoneidad (0-10) que refleje la evaluación general según los pesos.
+6. Determina si el candidato es apto (`apto`: True/False).
+7. Genera un resumen o las razones de no selección.
+8. **Estima** los porcentajes individuales de contribución de cada criterio al perfil general según tu evaluación y los pesos dados (campos: porcentaje_experiencia, etc.).
 
 **Formato de Salida:** Genera un objeto JSON puro con los siguientes campos:
 
 nombre (string): Nombre del candidato (primera letra mayúscula).
 apellidos (string): Apellidos del candidato (primera letra de cada apellido en mayúscula).
-experiencia_trabajo (list[string]): Experiencias laborales relevantes.
-educacion (list[string]): Experiencias académicas relevantes.
+experiencia_trabajo (list[string]): Experiencias laborales relevantes (resumen conciso de roles, empresas, etc.).
+educacion (list[string]): Experiencias académicas relevantes (grados, instituciones, etc.).
 apto (boolean): ¿Es apto para el puesto? (True/False).
 resumenCandidato (string, opcional): Resumen breve de fortalezas aplicadas al puesto (solo si es apto).
-puntuacionPuesto (integer): Puntuación de idoneidad (0-10).
+puntuacionPuesto (integer): Puntuación de idoneidad general (0-10).
 razonesNoAptitud (string, opcional): Razones de no selección (solo si no es apto).
-porcentaje_experiencia (float, opcional): Porcentaje de contribución de la experiencia a la puntuación.
-porcentaje_educacion (float, opcional): Porcentaje de contribución de la educación a la puntuación.
-porcentaje_habilidades (float, opcional): Porcentaje de contribución de las habilidades a la puntuación.
-porcentaje_idiomas (float, opcional): Porcentaje de contribución de los idiomas a la puntuación.
-porcentaje_otros (float, opcional): Porcentaje de contribución de otros factores a la puntuación.
-
+porcentaje_experiencia (float, opcional): Porcentaje de contribución estimado de la experiencia.
+porcentaje_educacion (float, opcional): Porcentaje de contribución estimado de la educación.
+porcentaje_habilidades (float, opcional): Porcentaje de contribución estimado de las habilidades.
+porcentaje_idiomas (float, opcional): Porcentaje de contribución estimado de los idiomas.
+porcentaje_otros (float, opcional): Porcentaje de contribución estimado de otros factores.
 
 **Restricciones:**
 - El idioma del JSON debe ser siempre español.
 - La respuesta debe ser un objeto JSON válido, sin texto adicional.
-- La experiencia laboral se muestra independientemente del puesto.
-- Asegúrate de que la respuesta sea directamente parseable como JSON.
+- La experiencia laboral y educación deben ser listas de strings con items concisos.
+- Asegúrate de que la respuesta sea directamente parseable como JSON y cumpla con el schema.
 """
 
     try:
@@ -169,58 +220,82 @@ porcentaje_otros (float, opcional): Porcentaje de contribución de otros factore
             ],
             # Usando response_mime_type y response_schema, Gemini debería devolver JSON directo
             config={'response_mime_type': 'application/json',
-                    'response_schema': Resultado}
+                    'response_schema': Resultado} # Usamos el schema Resultado
         )
 
-        # Acceder al texto crudo y luego intentar parsear por si acaso,
-        # aunque con response_mime_type deberíamos obtener un JSON string.
+        # Intentar obtener el texto crudo y parsearlo por seguridad,
+        # aunque response_mime_type y response_schema deberían dar un JSON string.
         text = response.text
         # print(f"Respuesta cruda de Gemini: {text}") # Para depuración
-        json_result = pasarStringaJson(text) # Usamos la función de parsing por seguridad
-        # Si pasarStringaJson devuelve None, significa que el parsing falló.
-        # En ese caso, intentamos parsear directamente de la respuesta que debería ser JSON
-        if json_result is None:
-             try:
-                 json_result = json.loads(text)
-                 # Opcional: Validar si el JSON cargado coincide con el schema
-                 Resultado(**json_result) # Esto lanzará error si no coincide
-             except (json.JSONDecodeError, Exception) as e:
-                 print(f"Error secundario al parsear JSON o validar schema: {e}")
-                 print(f"Texto recibido: {text}")
-                 return None # Fallo total en el parsing
+
+        # Intenta parsear directamente o usando la función auxiliar si es necesario
+        json_result = None
+        try:
+            json_result = json.loads(text)
+            # Opcional: Validar si el JSON cargado coincide con el schema
+            Resultado(**json_result) # Esto lanzará un error si no coincide con el modelo
+        except (json.JSONDecodeError, Exception) as e:
+            print(f"Error al parsear JSON o validar schema de la respuesta de Gemini: {e}")
+            print(f"Texto recibido: {text}")
+            # Si falla el parsing directo, intenta con la función auxiliar (menos fiable)
+            json_result = pasarStringaJson(text)
+            if json_result:
+                 try:
+                     Resultado(**json_result) # Re-validar si el parsing auxiliar tuvo éxito
+                 except Exception as e_validar_aux:
+                     print(f"Fallo de validación después de parsing auxiliar: {e_validar_aux}")
+                     return None # Fallo total
+            else:
+                return None # Fallo total en el parsing
 
         return json_result
 
     except Exception as e:
         print(f"Error llamando a la API de Gemini: {e}")
-        return None
+        # Considerar devolver un objeto de error estructurado para manejo en frontend
+        # return {"error": f"API Error: {e}"}
+        return None # Devolver None para indicar fallo en el procesamiento
 
 
 # --- Endpoints de la API ---
 
+# El endpoint /procesar_pdf es MODIFICADO para recibir los pesos
 @app.route('/procesar_pdf', methods=['POST'])
 def procesar_pdf_route():
-    # Este endpoint ahora procesa un solo PDF. La lógica masiva la moveremos al frontend
-    # y luego el frontend llamará a guardar_resultados_masivos.
-    # Podríamos mantener esta ruta para procesamiento individual si se necesita.
-    # Por ahora, la adaptamos para el flujo masivo si se sigue usando así.
-    # El frontend actual llama a esta ruta para cada PDF en el procesamiento masivo.
-    # Dejamos la lógica de procesamiento individual aquí.
-    # La lógica de guardar el historial se hará en un endpoint separado llamado por el frontend
-    # DESPUÉS de que el frontend haya llamado a este endpoint para cada PDF y recolectado los resultados.
-
+    """
+    Recibe un archivo PDF, puesto, filtros y pesos, y lo procesa usando AI.
+    """
     if 'pdf' not in request.files:
         return jsonify({'error': 'No se encontró el archivo PDF'}), 400
 
     pdf_file = request.files['pdf']
     nombre_puesto = request.form.get('puesto')
-    # Obtener filtros (deben venir en el form data)
+
+    # Obtener filtros
     filtro_idioma = request.form.get('filtro_idioma')
     filtro_experiencia_min_str = request.form.get('filtro_experiencia_min')
-    filtro_experiencia_min = int(filtro_experiencia_min_str) if filtro_experiencia_min_str else None
+    filtro_experiencia_min = int(filtro_experiencia_min_str) if filtro_experiencia_min_str and filtro_experiencia_min_str.isdigit() else None
     filtro_palabras_clave = request.form.get('filtro_palabras_clave')
     filtro_nivel_educativo = request.form.get('filtro_nivel_educativo')
     filtro_sector = request.form.get('filtro_sector')
+
+    # NUEVO: Obtener pesos del formulario. Usar get con valor por defecto si no vienen o son inválidos
+    def get_peso(key, default=0):
+        value_str = request.form.get(key)
+        if value_str is None or value_str == '':
+            return default # Usa el valor por defecto si no se proporciona o está vacío
+        try:
+            # Intentar convertir a float primero para mayor flexibilidad
+            return float(value_str)
+        except ValueError:
+            print(f"Advertencia: Peso inválido para {key}: '{value_str}'. Usando por defecto {default}.")
+            return default # Usa el valor por defecto si no es un número válido
+
+    peso_experiencia = get_peso('peso_experiencia', 35.0) # Usar float por defecto
+    peso_educacion = get_peso('peso_educacion', 30.0)
+    peso_habilidades = get_peso('peso_habilidades', 20.0)
+    peso_idiomas = get_peso('peso_idiomas', 10.0)
+    peso_otros = get_peso('peso_otros', 5.0)
 
 
     if pdf_file.filename == '':
@@ -229,73 +304,99 @@ def procesar_pdf_route():
     if not nombre_puesto:
         return jsonify({'error': 'No se especificó el puesto de trabajo'}), 400
 
-    filepath = None # Inicializar para asegurar que se limpie
+    filepath = None
     try:
         # Guardar archivo temporal
-        filepath = 'temp_' + pdf_file.filename # Usar nombre original para evitar colisiones si hay muchos requests
+        # Usar un nombre más robusto para el archivo temporal
+        temp_filename = f"temp_cv_{datetime.now().strftime('%Y%m%d%H%M%S%f')}_{pdf_file.filename.replace(' ', '_').replace('/', '_').replace('\\', '_')}"
+        filepath = os.path.join(pathlib.Path(__file__).parent, temp_filename) # Guardar en el directorio del script
         pdf_file.save(filepath)
 
-        # Procesar el PDF con todos los filtros
-        resultado = process_pdf(filepath, nombre_puesto, filtro_idioma, filtro_experiencia_min, filtro_palabras_clave, filtro_nivel_educativo, filtro_sector)
+        # Llamar a process_pdf_ai con todos los parámetros, incluyendo los pesos
+        resultado = process_pdf_ai(
+            filepath,
+            nombre_puesto,
+            filtro_idioma,
+            filtro_experiencia_min,
+            filtro_palabras_clave,
+            filtro_nivel_educativo,
+            filtro_sector,
+            peso_experiencia, # Pasar los pesos
+            peso_educacion,
+            peso_habilidades,
+            peso_idiomas,
+            peso_otros
+        )
 
         if resultado:
-            # Validar el resultado con el modelo Pydantic antes de enviar
+            # Validar el resultado con el modelo Pydantic antes de enviar al frontend
             try:
-                Resultado(**resultado) # Validar estructura
-                return jsonify(resultado)
+                return jsonify(resultado), 200
             except Exception as e:
-                print(f"Error de validación Pydantic del resultado: {e}")
-                print(f"Resultado inválido: {resultado}")
-                return jsonify({'error': 'El formato del resultado del procesamiento es inválido'}), 500
+                print(f"Error final de validación Pydantic del resultado: {e}")
+                print(f"Resultado que falló la validación final: {resultado}")
+                return jsonify({'error': 'El formato del resultado del procesamiento AI es inesperado'}), 500
         else:
-            # Si process_pdf devuelve None, hubo un error interno o de API
-            return jsonify({'error': 'Error interno al procesar el PDF con el modelo'}), 500
+            # process_pdf_ai devolvió None (error de API, parsing, etc.)
+            print("El procesamiento AI devolvió None.")
+            return jsonify({'error': 'Error interno o de API al procesar el PDF con AI'}), 500
 
     except Exception as e:
-        print(f"Error inesperado en la ruta /procesar_pdf: {e}")
+        print(f"Error inesperado en la ruta /procesar_pdf (antes de llamar a process_pdf_ai): {e}")
         return jsonify({'error': f'Error inesperado al procesar el PDF: {e}'}), 500
     finally:
         # Elimina el archivo temporal si existe
         if filepath and os.path.exists(filepath):
-            os.remove(filepath)
+            try:
+                os.remove(filepath)
+            except OSError as e:
+                 print(f"Advertencia: No se pudo eliminar el archivo temporal {filepath}: {e}")
 
 
-# --- Nuevo endpoint para guardar resultados masivos ---
+# --- Endpoints relacionados con historial de Análisis AI ---
+# Estos endpoints guardan y sirven el historial de los RESULTADOS DEL ANÁLISIS AI
+
 @app.route('/guardar_resultados_masivos', methods=['POST'])
 def guardar_resultados_masivos_route():
+    """
+    Recibe y guarda los resultados de un batch de procesamiento AI en el historial.
+    """
     try:
         data = request.get_json()
         if not data:
             return jsonify({'error': 'No se recibieron datos'}), 400
 
         puesto = data.get('puesto')
-        resultados_lista = data.get('resultados') # Lista de resultados de candidatos
+        resultados_lista = data.get('resultados') # Lista de resultados de candidatos (espera estructura Resultado)
 
         if not puesto or not isinstance(resultados_lista, list):
              return jsonify({'error': 'Datos inválidos: falta puesto o resultados no es una lista'}), 400
 
         historial = cargar_historial()
-        timestamp = datetime.now().isoformat() # Timestamp único para esta ejecución
+        # Usar ISO format para mayor precisión y facilidad de ordenamiento/parsing
+        timestamp = datetime.now().isoformat()
 
         nueva_ejecucion = {
             "timestamp": timestamp,
             "puesto": puesto,
-            "resultados": resultados_lista # Guardamos la lista completa de resultados
+            "resultados": resultados_lista # Guardamos la lista completa de resultados (válidos)
         }
 
         historial.append(nueva_ejecucion)
         guardar_historial(historial)
 
-        return jsonify({'message': 'Resultados guardados exitosamente', 'timestamp': timestamp}), 200
+        return jsonify({'message': 'Resultados guardados exitosamente en historial', 'timestamp': timestamp}), 200
 
     except Exception as e:
         print(f"Error en la ruta /guardar_resultados_masivos: {e}")
-        return jsonify({'error': f'Error al guardar resultados masivos: {e}'}), 500
+        return jsonify({'error': f'Error al guardar resultados masivos en historial: {e}'}), 500
 
 
-# --- Nuevo endpoint para obtener el historial ---
 @app.route('/historial_ejecuciones', methods=['GET'])
 def historial_ejecuciones_route():
+    """
+    Devuelve un resumen del historial de ejecuciones de análisis.
+    """
     try:
         historial = cargar_historial()
         # Devolvemos un resumen de cada ejecución, no los resultados completos de cada candidato
@@ -304,44 +405,58 @@ def historial_ejecuciones_route():
                 "timestamp": ejecucion.get("timestamp"),
                 "puesto": ejecucion.get("puesto"),
                 "num_candidatos": len(ejecucion.get("resultados", [])) # Contar cuántos candidatos se procesaron
+                # Opcional: Incluir los pesos usados en el resumen si se guardaron
+                # "pesos_usados": ejecucion.get("pesos_usados")
             }
             for ejecucion in historial
         ]
-        # Opcional: Ordenar por timestamp descendente
-        historial_resumen.sort(key=lambda x: x['timestamp'], reverse=True)
+        # Ordenar por timestamp descendente
+        historial_resumen.sort(key=lambda x: x.get('timestamp', ''), reverse=True) # Asegurar que timestamp existe para ordenar
 
         return jsonify(historial_resumen), 200
     except Exception as e:
         print(f"Error en la ruta /historial_ejecuciones: {e}")
         return jsonify({'error': f'Error al obtener historial: {e}'}), 500
 
-# --- Nuevo endpoint para obtener detalles de una ejecución ---
 @app.route('/detalles_ejecucion/<timestamp>', methods=['GET'])
 def detalles_ejecucion_route(timestamp):
+    """
+    Devuelve los detalles (counts de aptos/no aptos/error) de una ejecución de análisis específica.
+    """
     try:
         historial = cargar_historial()
         # Buscar la ejecución por timestamp
         ejecucion = next((e for e in historial if e.get("timestamp") == timestamp), None)
 
         if not ejecucion:
-            return jsonify({'error': 'Ejecución no encontrada'}), 404
+            return jsonify({'error': 'Ejecución no encontrada en historial'}), 404
 
         resultados_candidatos = ejecucion.get("resultados", [])
 
         # Contar aptos, no aptos, y 'no procesados' (considerando errores si los guardamos así)
         apto_count = 0
         no_apto_count = 0
-        no_procesado_count = 0 # Podríamos considerar 'no procesado' si el resultado fue un error o incompleto
+        no_procesado_count = 0 # Consideraremos 'no procesado' si el resultado en la lista es un objeto de error o no tiene la clave 'apto'
 
         for res in resultados_candidatos:
-            # Suponemos que un resultado válido siempre tendrá la clave 'apto'
-            if isinstance(res, dict) and 'apto' in res:
-                if res['apto']:
-                    apto_count += 1
-                else:
-                    no_apto_count += 1
+            # Intentar validar con el modelo para seguridad, pero contar incluso si la estructura es solo un error
+            if isinstance(res, dict):
+                 if 'error' in res:
+                      no_procesado_count += 1 # Contar como no procesado si es un objeto de error
+                 elif 'apto' in res: # Si no es un error, esperamos la clave 'apto'
+                     if res['apto']:
+                         apto_count += 1
+                     else:
+                         no_apto_count += 1
+                 else:
+                      # Si es un diccionario pero no tiene 'apto' ni 'error', es inesperado
+                      no_procesado_count += 1
+                      print(f"Advertencia: Resultado en historial con formato inesperado (falta 'apto'): {res}")
             else:
-                no_procesado_count += 1 # Considerar como no procesado si el formato es inesperado
+                # Si no es un diccionario, es un formato inesperado en la lista de resultados guardada
+                no_procesado_count += 1
+                print(f"Advertencia: Elemento en historial no es un diccionario: {res}")
+
 
         # Devolvemos los counts
         return jsonify({
@@ -352,16 +467,23 @@ def detalles_ejecucion_route(timestamp):
                 "no_apto": no_apto_count,
                 "no_procesado": no_procesado_count
             },
+            # Opcional: Devolver también los pesos usados para esta ejecución
+            # "pesos_usados": ejecucion.get("pesos_usados")
         }), 200
 
     except Exception as e:
         print(f"Error en la ruta /detalles_ejecucion/{timestamp}: {e}")
-        return jsonify({'error': f'Error al obtener detalles de la ejecución: {e}'}), 500
+        return jsonify({'error': f'Error al obtener detalles de la ejecución del historial: {e}'}), 500
 
 
 if __name__ == '__main__':
     # Crear el archivo de historial si no existe al iniciar
+    # Asegurarse de que SOLO creas el archivo de historial aquí
     if not os.path.exists(RUTA_HISTORIAL):
-        guardar_historial([]) # Crear un archivo JSON vacío
+        guardar_historial([])
 
+    # NO crees el archivo de usuarios ni la carpeta de CVs recibidos manualmente aquí
+
+    # Corre en el puerto principal (ej. 5001)
+    print(f"Iniciando Backend Principal (Procesamiento CVs) en el puerto 5001...")
     app.run(debug=True, port=5001)
