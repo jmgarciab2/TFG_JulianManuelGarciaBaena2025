@@ -1,3 +1,11 @@
+<b>Julian Manuel Garcia Baena</b>
+
+<b>Proyecto CVisualizer</b>
+
+
+
+<b>Flujo de trabajo</b>
+
 ```mermaid
 graph TD
     subgraph Frontend
