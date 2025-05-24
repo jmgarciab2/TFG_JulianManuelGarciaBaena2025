@@ -1,15 +1,47 @@
+###### CODIGO ORIGINAL                             ######
+###### Julian Manuel García Baena                  ######
+###### TFG CVisualizer Frontend  ######
+###### Convocatoria Ordinaria 2025                 ######
+
 import streamlit as st
 import os
 import pandas as pd
 import requests
 import json
-from st_aggrid import AgGrid, GridOptionsBuilder, ColumnsAutoSizeMode
+from st_aggrid import AgGrid, GridOptionsBuilder, ColumnsAutoSizeMode, GridUpdateMode, DataReturnMode
 import plotly.express as px
 from datetime import datetime
-# Nota: bcrypt no es necesario en el frontend
+import textwrap
 
 # Configuración de la página principal
 st.set_page_config(page_title="CVisualizer", page_icon="")
+
+import base64
+
+# --- CSS for background image ---
+def add_bg_from_local(image_file):
+    with open(image_file, "rb") as f:
+        img_bytes = f.read()
+    encoded_string = base64.b64encode(img_bytes).decode()
+    st.markdown(
+    f"""
+    <style>
+    .stApp {{
+        background-image: url(data:image/jpg;base64,{encoded_string});
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed; /* Keeps background fixed when scrolling */
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+    )
+
+# --- Define the image path ---
+# Ensure this path is correct relative to your Python script
+# Or use an absolute path if you prefer, but relative is generally better for deployment
+IMAGE_PATH = "Imagenes/blurred-view-corridor-with-plants.jpg"
 
 # --- Rutas de Archivos y Endpoints ---
 # Asegúrate de que esta ruta exista y contenga tus archivos PDF
@@ -471,96 +503,102 @@ def procesar_cvs_masivamente(
 
     return resultados
 
-# mostrar_respuesta_servidor_masivo
 def mostrar_respuesta_servidor_masivo(resultados):
-    """Muestra la respuesta del servidor para el procesamiento masivo en un AgGrid con botón de resumen."""
+    """
+    Muestra la respuesta del servidor para el procesamiento masivo en un AgGrid.
+    La columna 'Detalles' muestra el resumen o las razones de no aptitud directamente,
+    calculadas en Python, sin usar JavaScript en el cellRenderer.
+    """
     if resultados:
         df_resultados_tabla = []
         for res in resultados:
-            if 'error' not in res:
-                 df_resultados_tabla.append({
-                     "Nombre Completo": f"{res.get('nombre', 'N/A')} {res.get('apellidos', 'N/A')}",
-                     "Apto": "🟢 Apto" if res.get('apto', False) else "🔴 No apto",
-                     "Puntuación": res.get('puntuacionPuesto', 'N/A'),
-                     "respuesta_json": res # Guardamos el JSON completo aquí
-                 })
-            else:
-                 df_resultados_tabla.append({
-                      "Nombre Completo": f"{res.get('nombre_archivo_cv', 'Error')}",
-                      "Apto": "❌ Error",
-                      "Puntuación": "N/A",
-                      "respuesta_json": res # Guardamos el JSON de error aquí
-                 })
+            detalle_texto = "" # Inicializamos la variable para el texto de detalles
 
+            if 'error' not in res:
+                # Lógica para determinar el texto de detalles en Python
+                if res.get('apto', False) is True: # Si es apto
+                    detalle_texto = res.get('resumenCandidato', 'Sin resumen disponible.')
+                elif res.get('apto', False) is False: # Si NO es apto
+                    detalle_texto = res.get('razonesNoAptitud', 'Sin razones de no aptitud disponibles.')
+                else: # Si el valor de 'apto' no es un booleano claro (caso poco probable)
+                    detalle_texto = 'Estado de aptitud no definido.'
+
+                df_resultados_tabla.append({
+                    "Nombre Completo": f"{res.get('nombre', 'N/A')} {res.get('apellidos', 'N/A')}",
+                    "Apto": "Apto" if res.get('apto', False) else "No apto", # Se muestra como texto "Apto" o "No apto"
+                    "Puntuación": res.get('puntuacionPuesto', 'N/A'),
+                    "Detalles": detalle_texto, # <--- ¡Aquí se asigna el texto directamente!
+                    "respuesta_json": res # Guardamos el JSON completo para la sección de detalles interactiva
+                })
+            else:
+                # Manejo de casos con error en la respuesta del backend para un CV específico
+                df_resultados_tabla.append({
+                    "Nombre Completo": f"{res.get('nombre_archivo_cv', 'Error de archivo')}",
+                    "Apto": "Error",
+                    "Puntuación": "N/A",
+                    "Detalles": f"Error de procesamiento: {res.get('error_message', 'Desconocido')}",
+                    "respuesta_json": res # Guardamos el JSON de error completo
+                })
+
+        # Creamos el DataFrame de Pandas a partir de la lista de diccionarios
         df_resultados = pd.DataFrame(df_resultados_tabla)
 
+        # Configurador de opciones para AgGrid
         gb = GridOptionsBuilder.from_dataframe(df_resultados)
-        gb.configure_column("respuesta_json", hide=True) # Oculta la columna que contiene el JSON completo
+        
+        # Ocultamos la columna 'respuesta_json'. Aunque no se muestra, es crucial
+        # que exista en el DataFrame para que la sección de detalles pueda acceder
+        # a toda la información original del backend.
+        gb.configure_column("respuesta_json", hide=True)
 
-        # Añade una columna con un botón para ver detalles
-        gb.configure_column("Acciones",
-                           header_name="Detalles",
-                           cellRenderer='''
-                               class BtnCellRenderer {
-                                    init(params) {
-                                        this.eGui = document.createElement('div');
-                                        const rowData = params.data;
-                                        // Solo muestra el botón si no hubo un error de procesamiento
-                                        if (rowData && rowData.Apto !== '❌ Error') {
-                                            this.eGui.innerHTML = `<button class="btn-details">Ver Detalles</button>`;
-                                            this.btn = this.eGui.querySelector('.btn-details');
-                                            this.btn.addEventListener('click', () => {
-                                                // Envia un mensaje al hilo principal de Streamlit con los datos de la fila
-                                                parent.postMessage({ event: 'streamlit:selectRow', rowData: rowData }, '*');
-                                            });
-                                        } else {
-                                            this.eGui.innerHTML = 'Error'; // Muestra "Error" si la fila tiene un error
-                                        }
-                                    }
-                                    getGui() {
-                                        return this.eGui;
-                                    }
-                                    destroy() {
-                                        // Limpia listeners si es necesario
-                                        if (this.btn) {
-                                            this.btn.removeEventListener('click', this.onClick);
-                                        }
-                                    }
-                                }
-                           ''',
-                           autoHeight=True, suppressMenu=True, suppressFilter=True,
-                           resizable=False, sortable=False, editable=False,
-                           flex=1, minWidth=120
-                          )
-
+        # Configuramos la columna "Detalles" para que el texto se envuelva y la fila se ajuste
+        # según el contenido. No hay JavaScript aquí.
+        gb.configure_column("Detalles",
+                             header_name="Detalles del Candidato",
+                             wrapText=True, # Permite que el texto se envuelva dentro de la celda
+                             autoHeight=True, # Ajusta la altura de la fila al contenido de la celda
+                             resizable=True, # Permite al usuario redimensionar la columna
+                             flex=2, # Le da el doble de espacio flexible que a otras columnas
+                             minWidth=300 # Ancho mínimo de la columna
+                         )
+        
+        # Habilitamos la selección de una única fila. Cuando el usuario hace clic en una fila,
+        # esa fila se considera "seleccionada" en AgGrid.
+        gb.configure_selection(selection_mode='single', use_checkbox=False)
+        
+        # Construimos las opciones finales de la cuadrícula
         gridOptions = gb.build()
 
-        st.subheader("Resultados del Procesamiento")
-        # Muestra la tabla AgGrid
+        st.subheader("Resultados del Procesamiento Masivo")
+        
+        # Renderizamos la tabla AgGrid en la interfaz de Streamlit
         grid_response = AgGrid(
             df_resultados,
             gridOptions=gridOptions,
-            data_return_mode='AS_INPUT', # Opciones de retorno de datos (mantener como entrada)
-            update_mode='MODEL_CHANGED', # Actualiza la vista cuando cambian los datos
-            fit_columns_on_grid_load=False, # No autoajusta al cargar (mejor con auto size mode)
-            allow_unsafe_jscode=True, # Necesario para el cellRenderer con el botón
-            enable_enterprise_modules=False,
-            height=350,
-            width='100%',
-            reload_data=True, # Recarga los datos cuando cambian
-            columns_auto_size_mode=ColumnsAutoSizeMode.FIT_CONTENTS # Ajusta el tamaño de las columnas al contenido
+            data_return_mode=DataReturnMode.AS_INPUT,
+            # update_mode='SELECTION_CHANGED' es crucial: hace que Streamlit se re-ejecute
+            # cada vez que una fila diferente es seleccionada en la tabla.
+            update_mode=GridUpdateMode.SELECTION_CHANGED, 
+            fit_columns_on_grid_load=True, # Ajusta las columnas al ancho del contenedor al cargar
+            allow_unsafe_jscode=False, # Importante: deshabilitado porque no estamos inyectando JS personalizado
+            enable_enterprise_modules=False, # No usamos características de AgGrid Enterprise
+            height=350, # Altura fija de la tabla
+            width='100%', # Ancho completo
+            reload_data=True # Recarga los datos si la tabla ya existía
         )
 
-    else:
-        # Mensaje si no hay resultados después de intentar procesar
-        # La condición 'button_procesar_masivo_main' in st.session_state y ...
-        # asegura que este mensaje solo aparezca DESPUÉS de que el usuario haya pulsado el botón
-        if 'button_procesar_masivo_main' in st.session_state and st.session_state.button_procesar_masivo_main and \
-           ('resultados_procesamiento_masivo' not in st.session_state or not st.session_state['resultados_procesamiento_masivo']):
-            st.info("Proceso de CVs masivo completado. No se encontraron candidatos que cumplan con los filtros especificados, hubo errores, o el backend no devolvió resultados de análisis.")
-        else:
-            st.info("Presiona 'Procesar CVs Masivamente' para ver los resultados.")
+        # --- Lógica para mostrar los detalles completos del candidato seleccionado ---
+        # Este bloque se ejecuta si el usuario ha seleccionado una fila en la tabla.
+        # Captura los datos de la fila seleccionada y los guarda en st.session_state
+        # para que la sección de detalles debajo de la tabla pueda acceder a ellos.
+        if grid_response['selected_rows']:
+            selected_row_data = grid_response['selected_rows'][0]
+            st.session_state.selected_row_data = selected_row_data
+            st.rerun() # Fuerza una re-ejecución completa del script para mostrar los detalles
 
+    else:
+        # Mensaje si no hay resultados para mostrar en la tabla.
+        st.info("No hay resultados para mostrar. Procesa algunos CVs primero.")
 
 # --- Contenido de la primera pestaña (Procesamiento Masivo) ---
 def tab_procesamiento_masivo():
@@ -587,13 +625,10 @@ def tab_procesamiento_masivo():
             nueva_profesion_masiva_input = st.text_input("Nueva Profesión", key="input_nueva_profesion_masiva_main")
             # Botón para añadir la nueva profesión
             if st.button("Añadir", key="button_add_profesion_masiva_main"):
-                 # Pasamos la lista de profesiones actual para que la función la actualice y guarde
-                 if agregar_nueva_profesion(nueva_profesion_masiva_input, profesiones):
-                     # Si se añadió correctamente, forzamos rerun para actualizar el selectbox
-                     # Al hacer rerun, cargamos las profesiones de nuevo para que incluyan la nueva
-                     st.rerun()
+                # Pasamos la lista de profesiones actual para que la función la actualice y guarde
+                if agregar_nueva_profesion(nueva_profesion_masiva_input, profesiones):
+                    st.rerun()
 
-    # Determinar la profesión a usar (la seleccionada o la nueva si se añadió y seleccionó 'Otro')
     profesion_a_usar = selected_profesion if selected_profesion != "Otro" else nueva_profesion_masiva_input.strip()
 
     st.subheader("Pesos de Evaluación (%)")
@@ -601,37 +636,47 @@ def tab_procesamiento_masivo():
     # Sliders para los pesos de evaluación
     col_pesos1, col_pesos2, col_pesos3 = st.columns(3)
     with col_pesos1:
-        st.session_state['peso_experiencia'] = st.slider(
+        # CAMBIO AQUÍ: st.slider por st.number_input para Experiencia Laboral
+        st.session_state['peso_experiencia'] = st.number_input(
             "Experiencia Laboral",
             min_value=0, max_value=100,
-            value=st.session_state.get('peso_experiencia', 35), # Usar get con valor por defecto por si acaso
-            key="slider_peso_experiencia_main"
+            value=st.session_state.get('peso_experiencia', 35),
+            step=1, # Incremento/decremento de 1
+            key="input_peso_experiencia_main" # Clave única
         )
-        st.session_state['peso_educacion'] = st.slider(
+        # CAMBIO AQUÍ: st.slider por st.number_input para Formación Académica
+        st.session_state['peso_educacion'] = st.number_input(
             "Formación Académica",
             min_value=0, max_value=100,
             value=st.session_state.get('peso_educacion', 30),
-            key="slider_peso_educacion_main"
+            step=1,
+            key="input_peso_educacion_main"
         )
     with col_pesos2:
-        st.session_state['peso_habilidades'] = st.slider(
+        # CAMBIO AQUÍ: st.slider por st.number_input para Habilidades
+        st.session_state['peso_habilidades'] = st.number_input(
             "Habilidades",
             min_value=0, max_value=100,
             value=st.session_state.get('peso_habilidades', 20),
-            key="slider_peso_habilidades_main"
+            step=1,
+            key="input_peso_habilidades_main"
         )
-        st.session_state['peso_idiomas'] = st.slider(
+        # CAMBIO AQUÍ: st.slider por st.number_input para Idiomas
+        st.session_state['peso_idiomas'] = st.number_input(
             "Idiomas",
             min_value=0, max_value=100,
             value=st.session_state.get('peso_idiomas', 10),
-            key="slider_peso_idiomas_main"
+            step=1,
+            key="input_peso_idiomas_main"
         )
     with col_pesos3:
-        st.session_state['peso_otros'] = st.slider(
+        # CAMBIO AQUÍ: st.slider por st.number_input para Otros Factores
+        st.session_state['peso_otros'] = st.number_input(
             "Otros Factores",
             min_value=0, max_value=100,
             value=st.session_state.get('peso_otros', 5),
-            key="slider_peso_otros_main"
+            step=1,
+            key="input_peso_otros_main"
         )
 
     # Mostrar la suma actual y la diferencia de 100
@@ -702,72 +747,67 @@ def tab_procesamiento_masivo():
     # Este elif maneja el caso de que se pulsó el botón pero no hubo resultados válidos
     elif 'button_procesar_masivo_main' in st.session_state and st.session_state.button_procesar_masivo_main and \
          ('resultados_procesamiento_masivo' not in st.session_state or not st.session_state['resultados_procesamiento_masivo']):
-         st.info("Proceso de CVs masivo completado. No se encontraron candidatos que cumplan con los filtros especificados, hubo errores, o el backend no devolvió resultados de análisis.")
+        st.info("Proceso de CVs masivo completado. No se encontraron candidatos que cumplan con los filtros especificados, hubo errores, o el backend no devolvió resultados de análisis.")
 
 
     # Lógica para mostrar detalles del candidato seleccionado en AgGrid (dentro de esta pestaña)
     # Esto se activa cuando el listener en main() detecta un clic y actualiza selected_row_data
     if 'selected_row_data' in st.session_state and st.session_state.selected_row_data:
-         # Usamos pop para "consumir" el estado y que no se muestren los detalles en cada rerun
-         # a menos que se vuelva a hacer clic en el botón
-         selected_row_data = st.session_state.pop('selected_row_data')
-         respuesta_detallada = selected_row_data.get("respuesta_json", {})
+        # Usamos pop para "consumir" el estado y que no se muestren los detalles en cada rerun
+        # a menos que se vuelva a hacer clic en el botón
+        selected_row_data = st.session_state.pop('selected_row_data')
+        respuesta_detallada = selected_row_data.get("respuesta_json", {})
 
-         st.subheader(f"Detalles de {selected_row_data.get('Nombre Completo', 'Candidato')}")
+        st.subheader(f"Detalles de {selected_row_data.get('Nombre Completo', 'Candidato')}")
 
-         # Mostrar información básica
-         st.write(f"**Apto:** {selected_row_data.get('Apto', 'N/A')}")
-         st.write(f"**Puntuación (0-10):** {selected_row_data.get('Puntuacion', 'N/A')}") # Nota: Corregido 'puntuacionPuesto' por 'Puntuacion' según la columna de la tabla
+        # Mostrar información básica
+        st.write(f"**Apto:** {selected_row_data.get('Apto', 'N/A')}")
+        st.write(f"**Puntuación (0-10):** {selected_row_data.get('Puntuacion', 'N/A')}") # Nota: Corregido 'puntuacionPuesto' por 'Puntuacion' según la columna de la tabla
 
-         # Mostrar experiencia laboral
-         experiencia = respuesta_detallada.get("experiencia_trabajo", [])
-         if experiencia:
-             st.write("**Experiencia Laboral:**")
-             for item in experiencia:
-                 st.write(f"- {item}")
-         else:
-             st.write("**Experiencia Laboral:** No especificada o no extraída.")
+        # --- SECCIÓN MOVIDA: Mostrar resumen o razones de no aptitud de forma prominente ---
+        if respuesta_detallada.get("apto"):
+            resumen = respuesta_detallada.get("resumenCandidato")
+            if resumen:
+                st.write("**Resumen del Candidato:**")
+                st.info(resumen)
+        else:
+            razones = respuesta_detallada.get("razonesNoAptitud")
+            if razones:
+                st.write("**Razones de No Aptitud:**")
+                st.warning(razones)
+            elif 'error' in respuesta_detallada:
+                st.error(f"Error de procesamiento para este candidato: {respuesta_detallada.get('error', 'Error desconocido')}")
+                if 'error_message' in respuesta_detallada:
+                    st.text(f"Mensaje del servidor: {respuesta_detallada['error_message']}")
+            else:
+                st.write("**Razones de No Aptitud:** No especificadas.")
+        # --- FIN SECCIÓN MOVIDA ---
 
-         # Mostrar educación
-         educacion = respuesta_detallada.get("educacion", [])
-         if educacion:
-             st.write("**Educación:**")
-             for item in educacion:
-                  st.write(f"- {item}")
-         else:
-             st.write("**Educación:** No especificada o no extraída.")
+        # Mostrar experiencia laboral
+        experiencia = respuesta_detallada.get("experiencia_trabajo", [])
+        if experiencia:
+            st.write("**Experiencia Laboral:**")
+            for item in experiencia:
+                st.write(f"- {item}")
+        else:
+            st.write("**Experiencia Laboral:** No especificada o no extraída.")
 
-         # Mostrar resumen o razones de no aptitud
-         if respuesta_detallada.get("apto"):
-             resumen = respuesta_detallada.get("resumenCandidato")
-             if resumen:
-                 st.write("**Resumen del Candidato:**")
-                 st.info(resumen)
-         else:
-             razones = respuesta_detallada.get("razonesNoAptitud")
-             if razones:
-                 st.write("**Razones de No Aptitud:**")
-                 st.warning(razones)
-             elif 'error' in respuesta_detallada:
-                  st.error(f"Error de procesamiento para este candidato: {respuesta_detallada.get('error', 'Error desconocido')}")
-                  if 'error_message' in respuesta_detallada:
-                      st.text(f"Mensaje del servidor: {respuesta_detallada['error_message']}")
-             else:
-                 st.write("**Razones de No Aptitud:** No especificadas.")
+        # Mostrar educación
+        educacion = respuesta_detallada.get("educacion", [])
+        if educacion:
+            st.write("**Educación:**")
+            for item in educacion:
+                st.write(f"- {item}")
+        else:
+            st.write("**Educación:** No especificada o no extraída.")
 
-         # Mostrar porcentajes de evaluación devueltos por el backend
-         st.write("**Evaluación por Criterios (Porcentajes Estimados si disponibles):**")
-         st.write(f"- Experiencia: {respuesta_detallada.get('porcentaje_experiencia', 'N/A')}%")
-         st.write(f"- Educación: {respuesta_detallada.get('porcentaje_educacion', 'N/A')}%")
-         st.write(f"- Habilidades: {respuesta_detallada.get('porcentaje_habilidades', 'N/A')}%")
-         st.write(f"- Idiomas: {respuesta_detallada.get('porcentaje_idiomas', 'N/A')}%")
-         st.write(f"- Otros: {respuesta_detallada.get('porcentaje_otros', 'N/A')}%")
-
-         # --- Opcional: Mostrar los pesos USADOS si el backend los devolviera ---
-         # Para mostrar esto, el backend debería incluir los pesos que recibió en su respuesta JSON
-         # if 'pesos_usados' in respuesta_detallada:
-         #     st.write("**Pesos Usados en la Evaluación (Enviados desde Frontend):**")
-         #     st.json(respuesta_detallada['pesos_usados'])
+        # Mostrar porcentajes de evaluación devueltos por el backend
+        st.write("**Evaluación por Criterios (Porcentajes Estimados si disponibles):**")
+        st.write(f"- Experiencia: {respuesta_detallada.get('porcentaje_experiencia', 'N/A')}%")
+        st.write(f"- Educación: {respuesta_detallada.get('porcentaje_educacion', 'N/A')}%")
+        st.write(f"- Habilidades: {respuesta_detallada.get('porcentaje_habilidades', 'N/A')}%")
+        st.write(f"- Idiomas: {respuesta_detallada.get('porcentaje_idiomas', 'N/A')}%")
+        st.write(f"- Otros: {respuesta_detallada.get('porcentaje_otros', 'N/A')}%")
 
 
 # --- Contenido de la segunda pestaña (Historial) ---
@@ -878,6 +918,7 @@ def main():
         # Guarda los datos de la fila seleccionada en session_state
         st.session_state.selected_row_data = event['rowData']
         # Fuerza un rerun para que Streamlit procese el estado actualizado y muestre los detalles
+        print(f"Datos de la fila (rowData): { st.session_state.selected_row_data}")
         st.rerun()
 
     # --- Lógica de Autenticación ---
@@ -946,5 +987,6 @@ if __name__ == "__main__":
          st.session_state['select_historial_ejecucion_main'] = None # Ninguna selección inicial para el historial
     # Las inicializaciones de los pesos ya están arriba, fuera de main() y if __name__ == "__main__":
 
+    add_bg_from_local(IMAGE_PATH) # Call it here
     # Ejecutar la función principal de la aplicación
     main()

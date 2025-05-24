@@ -1,10 +1,10 @@
 {
-    "prueba": {
-        "password_hash": "$2b$12$wAeHF/mD5vg2Hfi2p9lluO22SHn2jl0Sf7DmGHoURtksNiVzsq3VG",
-        "company": "Empresa prueba"
-    },
     "prueba1": {
-        "password_hash": "$2b$12$oE5UATuC5QWwv1wzuNS73uSS4i78yvWYFo3OalmWXbiQpMTxNII6K",
-        "company": "Empresa Prueba"
+        "password_hash": "$2b$12$mcCnl3owISTpN/szs.9bSerZSSqa9i86ffj6h5Vubm1acMMvUBXRG",
+        "company": "Empresa de prueba"
+    },
+    "prueba3": {
+        "password_hash": "$2b$12$XUmcdqXTxqCN9DC8DkH51ODEZdtbx.Hh/ElR0pZGt2vXNeEskdWQK",
+        "company": "Empresa de prueba 3"
     }
 }
