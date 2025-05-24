@@ -1,0 +1,121 @@
+[
+    {
+        "timestamp": "2025-05-22T19:14:55.031038",
+        "puesto": "Profesor",
+        "resultados": [
+            {
+                "apellidos": "Ramirez Cardenas",
+                "apto": false,
+                "educacion": [
+                    "Computer Engineer with own degree in Robotics and Internet of Things",
+                    "Cambridge Certifications: TOEFL, SAT (C1 English Level), LLM Engineering: Master AI, Language Models and Agents",
+                    "Google IT Automation with Python",
+                    "BI courses provided by Telefónica"
+                ],
+                "experiencia_trabajo": [
+                    "Data Scientist en Telefónica Educación Digital",
+                    "Artificial Intelligence Research Intern en CEIEC Research Institute",
+                    "Junior Software Engineer en AyD Software SL",
+                    "Software Engineer Intern en AyD Software SL"
+                ],
+                "nombre": "Guillermo",
+                "porcentaje_educacion": 2.4,
+                "porcentaje_experiencia": 1.75,
+                "porcentaje_habilidades": 1.6,
+                "porcentaje_idiomas": 0.8,
+                "porcentaje_otros": 0.4,
+                "puntuacionPuesto": 4,
+                "razonesNoAptitud": "Si bien el candidato posee una sólida formación en Inteligencia Artificial y experiencia en desarrollo de software, su experiencia laboral no se relaciona directamente con la docencia o la educación.  La falta de experiencia en educación especial también resulta un factor determinante para la no aptitud.",
+                "nombre_archivo_cv": "GuillermoRamirez_CV.pdf"
+            },
+            {
+                "apellidos": "Muñoz Rojas",
+                "apto": false,
+                "educacion": [
+                    "Grado en Ingeniería Informática y título propio en Hacking Ético y Ciberseguridad en la Universidad Francisco de Vitoria (Madrid) (Septiembre 2020-Junio 2024)",
+                    "Ciclo Formativo Superior en Desarrollo de Aplicaciones Multiplataforma en la Universidad Europea de Madrid (Septiembre 2018-Junio 2020)"
+                ],
+                "experiencia_trabajo": [
+                    "Analista de seguridad en Zerolynx (Septiembre 2023-Actualmente): Auditorías web, internas, externas y de dispositivos móviles; análisis forense; apoyo técnico en proyectos de Red Team",
+                    "Administrador de Base de Datos, Gestor Web y Desarrollador de Software en Resgreen S.L. (Noviembre 2022-Septiembre 2023): Gestión de información en BBDD Access; desarrollo de software en Visual Basic; creación y gestión de página web"
+                ],
+                "nombre": "Javier",
+                "porcentaje_educacion": 0.3,
+                "porcentaje_experiencia": 0.175,
+                "porcentaje_habilidades": 0.2,
+                "porcentaje_idiomas": 0.1,
+                "porcentaje_otros": 0.025,
+                "puntuacionPuesto": 4,
+                "razonesNoAptitud": "Si bien el candidato tiene un buen perfil técnico y formación en ciberseguridad, su experiencia laboral no parece directamente relacionada con la docencia o la educación.  Falta experiencia demostrable en formación o tutoría para ser considerado apto para un puesto de profesor.",
+                "nombre_archivo_cv": "JavierMuñozRojasCV.pdf"
+            },
+            {
+                "apellidos": "Manuel García Baena",
+                "apto": false,
+                "educacion": [
+                    "Ingeniería Informática y Título Propio en Robótica, Universidad Francisco de Vitoria (2020-2025)",
+                    "Desarrollo de Aplicaciones Multiplataforma, CES Juan Pablo Segundo (2018-2020)"
+                ],
+                "experiencia_trabajo": [
+                    "Desarrollador Backend, Duagon Iberia (Junio 2024 - Octubre 2024)",
+                    "Desarrollador Backend, KPMG (Becario) (Octubre 2023 - Mayo 2024)"
+                ],
+                "nombre": "Julian",
+                "porcentaje_educacion": 0.3,
+                "porcentaje_experiencia": 0.175,
+                "porcentaje_habilidades": 0.2,
+                "porcentaje_idiomas": 0.1,
+                "porcentaje_otros": 0.025,
+                "puntuacionPuesto": 4,
+                "razonesNoAptitud": "Falta de experiencia docente o formación pedagógica. Si bien cuenta con experiencia en desarrollo de software, no se evidencia ninguna cualidad o experiencia relacionada con la docencia.  La formación en ingeniería informática es relevante pero no suficiente para un puesto de profesor.",
+                "nombre_archivo_cv": "JulianManuelGarciaBaena_CV_actualizado_v2 (1).pdf"
+            },
+            {
+                "apellidos": "Rodríguez Rodríguez",
+                "apto": true,
+                "educacion": [
+                    "Máster en Orientación e Intervención Psicopedagógica (UCJC)",
+                    "Maestra Especialista en Audición y Lenguaje (Academica de Oposición Possum)",
+                    "Grado en Magisterio de Primaria con mención especializada en Audición y Lenguaje (UCM)",
+                    "Bachillerato de Ciencias Sociales (Colegio Pureza de María)"
+                ],
+                "experiencia_trabajo": [
+                    "Apoyo específico a alumnos con necesidades educativas especiales como maestra especialista en Audición y Lenguaje (Colegio Público Abén Hazám)",
+                    "Clases de refuerzo educativo de Lengua Castellana y Literatura para alumnos de 1º y 2º de la ESO (IES Antonio Fraguas Forges)",
+                    "Atención a las necesidades específicas del alumnado (Colegio Público de Educación Especial Santiago Ramón y Cajal)",
+                    "Clases particulares (online y/o presenciales) a alumnos de primaria",
+                    "Socorrista en piscinas (Bersar S.L y Maxi Pool S.L)"
+                ],
+                "nombre": "Noelia",
+                "porcentaje_educacion": 0.3,
+                "porcentaje_experiencia": 0.35,
+                "porcentaje_habilidades": 0.2,
+                "porcentaje_idiomas": 0.1,
+                "porcentaje_otros": 0.05,
+                "puntuacionPuesto": 8,
+                "resumenCandidato": "Noelia presenta un perfil excelente para el puesto de profesor, con una sólida formación académica en educación y especialización en audición y lenguaje, complementada por una experiencia significativa en el ámbito educativo tanto en clases de apoyo como en refuerzo.  Su experiencia como socorrista demuestra responsabilidad y capacidad de trabajo en equipo.",
+                "nombre_archivo_cv": "NoeliaRodriguezCV.pdf"
+            },
+            {
+                "apellidos": "Jose Paniagua Falo",
+                "apto": false,
+                "educacion": [
+                    "Ingeniería Informática en Universidad Francisco de Vitoria"
+                ],
+                "experiencia_trabajo": [
+                    "Data Scientist Intern en Engie GEMS-Spain",
+                    "Director of Strategy and Data Governance for Project NLC"
+                ],
+                "nombre": "Pedro",
+                "porcentaje_educacion": 18.0,
+                "porcentaje_experiencia": 10.5,
+                "porcentaje_habilidades": 12.0,
+                "porcentaje_idiomas": 6.0,
+                "porcentaje_otros": 3.5,
+                "puntuacionPuesto": 4,
+                "razonesNoAptitud": "Aunque el candidato presenta habilidades técnicas sólidas en programación y análisis de datos, su experiencia laboral no se alinea directamente con las funciones de un profesor.  La falta de experiencia en docencia o formación pedagógica, así como la ausencia de mención a la educación especial, son factores determinantes para su no idoneidad.  El nivel de inglés es relevante pero la experiencia laboral no cubre el requisito.",
+                "nombre_archivo_cv": "PedroJosePaniaguaFaloCV.pdf"
+            }
+        ]
+    }
+]

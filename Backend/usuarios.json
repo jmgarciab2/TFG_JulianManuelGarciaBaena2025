@@ -1,0 +1,10 @@
+{
+    "prueba1": {
+        "password_hash": "$2b$12$mcCnl3owISTpN/szs.9bSerZSSqa9i86ffj6h5Vubm1acMMvUBXRG",
+        "company": "Empresa de prueba"
+    },
+    "prueba3": {
+        "password_hash": "$2b$12$XUmcdqXTxqCN9DC8DkH51ODEZdtbx.Hh/ElR0pZGt2vXNeEskdWQK",
+        "company": "Empresa de prueba 3"
+    }
+}
